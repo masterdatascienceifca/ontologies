@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Redes semánticas</title>
+
+		<meta name="description" content="Ontologías">
+		<meta name="author" content="Miguel Expósito Martín">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/solarized.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+                <section>
+                    <section data-id="1" data-markdown>
+                        <script type="text/template">
+                            # semántica
+                        </script>
+                    </section>
+
+                    <section data-id="1" data-markdown>
+                        <script type="text/template">
+                           - Redes semánticas
+                           - Minería de textos y minería web
+                           - **Ontologías**
+                           - Linked Data
+                           - Análisis de redes complejas
+                        </script>
+                    </section>
+
+                </section>
+                <section>
+				<section data-id="1" data-markdown>
+					<script type="text/template">
+					# Ontologías
+
+					</script>
+				</section>
+                <section data-id="1" data-markdown>
+                    <script type="text/template">
+                        ### Ontologías
+                        - Introducción a RDF
+                        - Introducción a Ontologías
+                        - RDFs
+                        - OWL
+                        - SKOS
+
+
+                    </script>
+                </section>
+                </section>
+                <section>
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                # Introducción a RDF
+
+                </script>
+                </section>
+
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## ¿Qué es RDF?
+
+                > Un marco de trabajo para expresar información sobre recursos.
+
+                documentos, personas, objetos físicos y/o abstractos...
+
+                - información en la web necesita ser procesada por aplicaciones
+                - RDF ofrece un marco común sin pérdida de significado
+
+                </script>
+                </section>
+
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                 ## ¿Para qué RDF?
+                 - para añadir información legible para motores de búsqueda
+                 - para enriquecer un dataset enlazándolo con datasets de terceros
+                 - para entrelazar feeds de APIs, facilitando su descubrimiento
+                 - para construir agregaciones de datos sobre determinados temas
+
+
+
+                </script>
+                </section>
+
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## ¿Para qué RDF?
+                - para proporcionar un estándar de intercambio de datos entre BBDDs
+                - para permitir consultas cruzadas a datasets de una organización
+                - para enriquecer, describir y contextualizar los datos
+                - para fomentar nuevas asociaciones entre datasets
+
+
+                </script>
+                </section>
+
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## ¿Y el modelo relacional?
+                - una tabla es fácil de mostrar, ordenar y editar
+                - su semántica está en las filas y columnas de sus tablas
+                - una BDR permite cruzar varias tablas de forma estándar
+                - evolucionar los esquemas es complejo:
+
+                datos + consultas
+
+
+
+                </script>
+                </section>
+
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## ¿Y el modelo relacional?
+                - además, los esquemas se pueden volver tremendamente complicados
+
+                soluciones: procedimientos almacenados y ORMs
+
+                #### a veces, es necesario modelar para lo inesperado: flexibilidad
+
+                </script>
+                </section>
+
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## modelo de datos RDF
+
+                - RDF permite hacer declaraciones sobre recursos.
+                - El formato de una declaración es sencillo:
+
+                **sujeto + predicado + objeto**
+
+                - El predicado representa la naturaleza de la relación
+                - Las declaraciones RDF se denominan tripletas
+
+
+                </script>
+                </section>
+
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## ejemplo informal de tripletas
+
+                        <Bob> <is a> <person>.
+                        <Bob> <is a friend of> <Alice>.
+                        <Bob> <is born on> <the 4th of July 1990>.
+                        <Bob> <is interested in> <the Mona Lisa>.
+                        <the Mona Lisa> <was created by> <Leonardo da Vinci>.
+                        <the video 'La Joconde à Washington'> <is about> <the Mona Lisa>.
+
+                </script>
+                </section>
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## ejemplo informal de tripletas
+
+                ![Grafo de tripletas](./img/example-graph.jpg)<!-- .element: height="75%" width="75%"-->
+                </script>
+                </section>
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## IRIs, URIs, URLs
+                - URI: identifica un recurso físico o abstracto
+                - IRI: como la URI, pero incorpora UTF-8
+                - URL: una URI que, además de identificar, proporciona una forma de localizar el recurso a través de su mecanismo de acceso primario
+
+                http://dbpedia.org/resource/Leonardo_da_Vinci
+
+                **son identificadores únicos (fuertes)**
+
+
+                </script>
+                </section>
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## IRIs, URIs, URLs
+                Es común acortar los URIs asignando un espacio de nombres a su base:
+
+                http://www.w3.org/1999/02/22-rdf-syntax-ns#type
+
+                rdf = http://www.w3.org/1999/02/22-rdf-syntax-ns#
+
+                **rdf:type**
+
+
+                </script>
+                </section>
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## literales
+                valores básicos que no son IRIs (strings, dates...)
+
+                Muchos [tipos de datos](https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#section-Datatypes) provienen de XML Schema
+
+
+                </script>
+                </section>
+
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## blank nodes
+
+                - A veces es útil representar un recurso sin usar un identificador.
+                - Se asemejan a variables en álgebra: representan algo cuyo valor se desconoce.
+                - Pueden aparecer en las posiciones de sujeto y objeto.
+                - Se usan para agrupar conjuntos de declaraciones.
+
+                </script>
+                </section>
+
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## ejemplo de blank nodes
+
+                ![Blank node](./img/example-blank-node.jpg)
+
+                </script>
+                </section>
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## grafos múltiples
+
+                RDF permite agrupar declaraciones en varios grafos y asociarlos a un IRI determinado
+
+                        <http://example.org/bob#me> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> <http://example.org/bob>
+
+                **se denominan quads**
+
+
+                </script>
+                </section>
+
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## formatos de serialización
+
+                N-triples:
+
+                        <http://example.org/bob#me> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://xmlns.com/foaf/0.1/Person> .
+                        <http://example.org/bob#me> <http://xmlns.com/foaf/0.1/knows> <http://example.org/alice#me> .
+                        <http://example.org/bob#me> <http://schema.org/birthDate> "1990-07-04"^^<http://www.w3.org/2001/XMLSchema#date> .
+                        <http://example.org/bob#me> <http://xmlns.com/foaf/0.1/topic_interest> <http://www.wikidata.org/entity/Q12418> .
+
+                </script>
+                </section>
+
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## formatos de serialización
+
+                Turtle:
+
+                        BASE   <http://example.org/>
+                        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
+                        PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+                        PREFIX schema: <http://schema.org/>
+                        PREFIX dcterms: <http://purl.org/dc/terms/>
+                        PREFIX wd: <http://www.wikidata.org/entity/>
+
+                        <bob#me>
+                        a foaf:Person ;
+                        foaf:knows <alice#me> ;
+                        schema:birthDate "1990-07-04"^^xsd:date ;
+                        foaf:topic_interest wd:Q12418 .
+
+                </script>
+                </section>
+
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## formatos de serialización
+
+                blank node:
+
+                        PREFIX lio: <http://purl.org/net/lio#>
+
+                        <http://dbpedia.org/resource/Mona_Lisa> lio:shows _:x .
+                        _:x a <http://dbpedia.org/resource/Cypress> .
+
+                </script>
+                </section>
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## formatos de serialización
+
+                JSON-LD:
+
+                        {
+                            "@context": "example-context.json",
+                            "@id": "http://example.org/bob#me",
+                            "@type": "Person",
+                            "birthdate": "1990-07-04",
+                            "knows": "http://example.org/alice#me",
+                            "interest": {
+                              "@id": "http://www.wikidata.org/entity/Q12418",
+                              "title": "Mona Lisa",
+                              "subject_of": "http://data.europeana.eu/item/04802/243FA8618938F4117025F17A8B813C5F9AA4D619",
+                              "creator": "http://dbpedia.org/resource/Leonardo_da_Vinci"
+                      }
+                    }
+
+                </script>
+                </section>
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## formatos de serialización
+
+                JSON-LD context:
+
+                    {
+                      "@context": {
+                        "foaf": "http://xmlns.com/foaf/0.1/",
+                        "Person": "foaf:Person",
+                        "interest": "foaf:topic_interest",
+                        "knows": {
+                          "@id": "foaf:knows",
+                          "@type": "@id"
+                        },
+                        "birthdate": {
+                          "@id": "http://schema.org/birthDate",
+                          "@type": "http://www.w3.org/2001/XMLSchema#date"
+                        },
+                        "dcterms": "http://purl.org/dc/terms/",
+                        "title": "dcterms:title",
+                        "creator": {
+                          "@id": "dcterms:creator",
+                          "@type": "@id"
+                        },
+                        "subject_of": {
+                          "@reverse": "dcterms:subject",
+                          "@type": "@id"
+                        }
+                      }
+                    }
+
+                </script>
+                </section>
+
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## formatos de serialización
+
+                RDF/XML:
+
+                    <?xml version="1.0" encoding="utf-8"?>
+                    <rdf:RDF
+                                     xmlns:dcterms="http://purl.org/dc/terms/"
+                                     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+                                     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                                     xmlns:schema="http://schema.org/">
+                       <rdf:Description rdf:about="http://example.org/bob#me">
+                          <rdf:type rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+                          <schema:birthDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1990-07-04</schema:birthDate>
+                          <foaf:knows rdf:resource="http://example.org/alice#me"/>
+                          <foaf:topic_interest rdf:resource="http://www.wikidata.org/entity/Q12418"/>
+                       </rdf:Description>
+                       <rdf:Description rdf:about="http://www.wikidata.org/entity/Q12418">
+                          <dcterms:title>Mona Lisa</dcterms:title>
+                          <dcterms:creator rdf:resource="http://dbpedia.org/resource/Leonardo_da_Vinci"/>
+                       </rdf:Description>
+                       <rdf:Description rdf:about="http://data.europeana.eu/item/04802/243FA8618938F4117025F17A8B813C5F9AA4D619">
+                          <dcterms:subject rdf:resource="http://www.wikidata.org/entity/Q12418"/>
+                       </rdf:Description>
+                    </rdf:RDF>
+
+                </script>
+                </section>
+
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## vocabularios
+
+                - RDF se utiliza conjuntamente con vocabularios para proporcionar información semántica.
+                - Para definir vocabularios, RDF proporciona la herramienta básica RDF Schema (RDFs)
+
+                </script>
+                </section>
+
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## vocabularios
+
+                - Clase: categoría para clasificar recursos.
+                - Tipo: relación entre instancia y su clase correspondiente.
+                - Dominio: colección de tipos que usan una propiedad.
+                - Rango: tipos de valores que puede tomar una propiedad.
+
+                **un recurso se considera miembro de una clase por sus propiedades**
+
+
+                </script>
+                </section>
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## vocabularios
+                <!-- .slide: style="font-size:30px" -->
+
+                |Construct|Sintaxis|
+                |---------|--------|
+                |Class (class)|`C rdf:type rdfs:Class`|
+                |Property (class)|`P rdf:type rdf:Property`|
+                |type (property)|`I rdf:type C`|
+                |subClassOf (property)|`C1 rdfs:subClassOf C2`|
+                |subPropertyOf (property)|`P1 rdfs:subPropertyOf P2`|
+                |domain (property)|`P rdfs:domain C`|
+                |range (property)|`P rdfs:range C`|
+
+                </script>
+                </section>
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## modelo informal
+                    <Person> <type> <Class>
+                    <is a friend of> <type> <Property>
+                    <is a friend of> <domain> <Person>
+                    <is a friend of> <range> <Person>
+                    <is a good friend of> <subPropertyOf> <is a friend of>
+
+                </script>
+                </section>
+
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## modelo real
+                ![Modelo real](./img/icane_model.png)<!-- .element: height="75%" width="75%"-->
+
+                </script>
+                </section>
+
+                </section>
+
+
+
+
+                <section>
+
+                <div>
+                <a href="https://masterdatascience.ifca.es/"><img alt="Logotipo Máster Data Science IFCA"  src="./img/logo_3.png" style="max-width: none; max-height: none; color: rgb(255, 153, 0);  vertical-align:middle;" />
+                <p style="font-size:20px; text-align:center; margin-top: 1em"><span style="font-weight: bold;"><a href="https://github.com/masterdatascienceifca/ontologies">Acceso al repositorio con la presentación</a></span></p>
+                <p style="font-size:20px; text-align:center; margin-top: 1em"><span style="font-weight: bold;">URL de la presentación: <a href="https://masterdatascienceifca.github.io/ontologies/">https://masterdatascienceifca.github.io/ontologies/</a></span></p>
+
+
+                <p style="font-size:20px; text-align:center; margin-top: 1em"><span style="font-weight: bold;"><a href="https://twitter.com/predicador37">Miguel Expósito Martín</a></span></p>
+                <p style="font-size:20px; text-align:center; margin-top: 1em"><span style="font-weight: bold;"><a href="mailto:miguel.exposito@gmail.com">miguel.exposito@gmail.com</a></span></p>
+
+                </div>
+
+                </section>
+
+				</div>
+
+			</div>
+
+			<script src="lib/js/head.min.js"></script>
+			<script src="js/reveal.js"></script>
+
+			<script>
+
+				// Full list of configuration options available at:
+				// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+			progress: true,
+			history: true,
+			center: true,
+
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+			// Optional reveal.js plugins
+			dependencies: [
+			{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+			{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+			{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+			{ src: 'plugin/zoom-js/zoom.js', async: true },
+			{ src: 'plugin/tagcloud/tagcloud.js', async: true },
+			{ src: 'plugin/chalkboard/chalkboard.js' },
+			{ src: 'plugin/notes/notes.js', async: true }
+			],
+			keyboard: {
+				67: function() { RevealChalkboard.toggleNotesCanvas() },	// toggle notes canvas when 'c' is pressed
+				66: function() { RevealChalkboard.toggleChalkboard() },	// toggle chalkboard when 'b' is pressed
+				46: function() { RevealChalkboard.clear() },	// clear chalkboard when 'DEL' is pressed
+				 8: function() { RevealChalkboard.reset() },	// reset chalkboard data on current slide when 'BACKSPACE' is pressed
+				68: function() { RevealChalkboard.download() },	// downlad recorded chalkboard drawing when 'd' is pressed
+			}
+			});
+
+			</script>
+
+		</body>
+	</html>
