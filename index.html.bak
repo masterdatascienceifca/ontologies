@@ -757,7 +757,7 @@ Instancias
                 <script type="text/template">
                 ##  perfiles de OWL: OWL 2 / EL
 
-                - Útil si se tienen muchas clases y propiedades enlazadas a través de relaciones complejas y se desea que el razonador descubra nuevas relaciones
+                - Útil si se tienen muchas clases y propiedades enlazadas a través de relaciones complejas y se desea que el reazonador descubra nuevas relaciones
                 - Dichas relaciones entre clases pueden inferirse en tiempo polinomial
 
                 </script>
@@ -1344,7 +1344,7 @@ Instancias
                 <section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                # modelado de ontologías
+                # modelado de ontologias
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
@@ -1365,7 +1365,7 @@ Instancias
                 - `rdf:type`: tipo de un recurso. Especifica que es una instancia de una clase.
                 - `rdfs:subClassOf`: especifica que una clase es subclase de otra.
                 - `rdfs:domain`: implica que, cuando una propiedad se utilice en una tripleta, el sujeto de dicha tripleta tendrá que ser instancia de la clase especificada por `rdfs:domain`.
-                - `rdfs:range`: implica que, cuando la propiedad se utilice en una tripleta, el objeto de dicha tripleta tendrá que ser instancia de la clase especificada por `rdfs:range`.
+                - `rdfs:range`: implica que, cuando la propiedad se utilice en una trpleta, el objeto de dicha tripleta tendrá que ser instancia de la clase especificada por `rdfs:range`.
                 </script>
                 </section>
 
