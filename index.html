@@ -91,12 +91,12 @@
                 <script type="text/template">
                 ## ¿Qué es RDF?
 
-                > Un marco de trabajo para expresar información sobre recursos.
+                > Un marco de trabajo para expresar información sobre recursos.<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                documentos, personas, objetos físicos y/o abstractos...
+                documentos, personas, objetos físicos y/o abstractos...<!-- .element: class="fragment" data-fragment-index="2" -->
 
-                - información en la web necesita ser procesada por aplicaciones
-                - RDF ofrece un marco común sin pérdida de significado
+                - información en la web necesita ser procesada por aplicaciones<!-- .element: class="fragment" data-fragment-index="3" -->
+                - RDF ofrece un marco común sin pérdida de significado<!-- .element: class="fragment" data-fragment-index="4" -->
 
                 </script>
                 </section>
@@ -104,12 +104,10 @@
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                  ## ¿Para qué RDF?
-                 - para añadir información legible para motores de búsqueda
-                 - para enriquecer un dataset enlazándolo con datasets de terceros
-                 - para entrelazar feeds de APIs, facilitando su descubrimiento
-                 - para construir agregaciones de datos sobre determinados temas
-
-
+                 - para añadir información legible para motores de búsqueda<!-- .element: class="fragment" data-fragment-index="1" -->
+                 - para enriquecer un dataset <!-- .element: class="fragment" data-fragment-index="2" -->[enlazándolo](http://lod-cloud.net/)<!-- .element: class="fragment" data-fragment-index="2" --> con datasets de terceros<!-- .element: class="fragment" data-fragment-index="2" -->
+                 - para entrelazar feeds de APIs, facilitando su descubrimiento<!-- .element: class="fragment" data-fragment-index="3" -->
+                 - para construir agregaciones de datos sobre determinados temas<!-- .element: class="fragment" data-fragment-index="4" -->
 
                 </script>
                 </section>
@@ -117,10 +115,10 @@
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## ¿Para qué RDF?
-                - para proporcionar un estándar de intercambio de datos entre BBDDs
-                - para permitir consultas cruzadas a datasets de una organización
-                - para enriquecer, describir y contextualizar los datos
-                - para fomentar nuevas asociaciones entre datasets
+                - para proporcionar un estándar de intercambio de datos entre BBDDs<!-- .element: class="fragment" data-fragment-index="1" -->
+                - para permitir consultas cruzadas a datasets de una organización<!-- .element: class="fragment" data-fragment-index="2" -->
+                - para enriquecer, describir y contextualizar los datos<!-- .element: class="fragment" data-fragment-index="3" -->
+                - para fomentar nuevas asociaciones entre datasets<!-- .element: class="fragment" data-fragment-index="4" -->
 
 
                 </script>
@@ -129,12 +127,12 @@
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## ¿Y el modelo relacional?
-                - una tabla es fácil de mostrar, ordenar y editar
-                - su semántica está en las filas y columnas de sus tablas
-                - una BDR permite cruzar varias tablas de forma estándar
-                - evolucionar los esquemas es complejo:
+                - una tabla es fácil de mostrar, ordenar y editar<!-- .element: class="fragment" data-fragment-index="1" -->
+                - su semántica está en las filas y columnas de sus tablas<!-- .element: class="fragment" data-fragment-index="2" -->
+                - una BDR permite cruzar varias tablas de forma estándar<!-- .element: class="fragment" data-fragment-index="3" -->
+                - evolucionar los esquemas es complejo:<!-- .element: class="fragment" data-fragment-index="4" -->
 
-                datos + consultas
+                datos + consultas<!-- .element: class="fragment" data-fragment-index="4" -->
 
 
 
@@ -144,26 +142,33 @@
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## ¿Y el modelo relacional?
-                - además, los esquemas se pueden volver tremendamente complicados
+                - además, los esquemas se pueden volver tremendamente complicados<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                soluciones: procedimientos almacenados y ORMs
+                soluciones: procedimientos almacenados y ORMs<!-- .element: class="fragment" data-fragment-index="2" -->
 
-                #### a veces, es necesario modelar para lo inesperado: flexibilidad
+                #### a veces, es necesario modelar para lo inesperado: flexibilidad<!-- .element: class="fragment" data-fragment-index="3" -->
 
                 </script>
                 </section>
+
+                    <section data-id="1" data-markdown>
+                        <script type="text/template">
+                            ### un esquema complicado
+                            ![Esquema complejo](./img/data_model_hell.png)
+                        </script>
+                    </section>
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## modelo de datos RDF
 
-                - RDF permite hacer declaraciones sobre recursos.
-                - El formato de una declaración es sencillo:
+                - RDF permite hacer declaraciones sobre recursos.<!-- .element: class="fragment" data-fragment-index="1" -->
+                - El formato de una declaración es sencillo:<!-- .element: class="fragment" data-fragment-index="2" -->
 
-                **sujeto + predicado + objeto**
+                **sujeto + predicado + objeto**<!-- .element: class="fragment" data-fragment-index="3" -->
 
-                - El predicado representa la naturaleza de la relación
-                - Las declaraciones RDF se denominan tripletas
+                - El predicado representa la naturaleza de la relación<!-- .element: class="fragment" data-fragment-index="4" -->
+                - Las declaraciones RDF se denominan tripletas<!-- .element: class="fragment" data-fragment-index="5" -->
 
 
                 </script>
@@ -192,13 +197,13 @@
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## IRIs, URIs, URLs
-                - URI: identifica un recurso físico o abstracto
-                - IRI: como la URI, pero incorpora UTF-8
-                - URL: una URI que, además de identificar, proporciona una forma de localizar el recurso a través de su mecanismo de acceso primario
+                - URI: identifica un recurso físico o abstracto<!-- .element: class="fragment" data-fragment-index="1" -->
+                - IRI: como la URI, pero incorpora UTF-8<!-- .element: class="fragment" data-fragment-index="2" -->
+                - URL: una URI que, además de identificar, proporciona una forma de localizar el recurso a través de su mecanismo de acceso primario<!-- .element: class="fragment" data-fragment-index="3" -->
 
-                http://dbpedia.org/resource/Leonardo_da_Vinci
+                http://dbpedia.org/resource/Leonardo_da_Vinci<!-- .element: class="fragment" data-fragment-index="4" -->
 
-                **son identificadores únicos (fuertes)**
+                **son identificadores únicos (fuertes)**<!-- .element: class="fragment" data-fragment-index="5" -->
 
 
                 </script>
@@ -220,9 +225,9 @@
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## literales
-                valores básicos que no son IRIs (strings, dates...)
+                valores básicos que no son IRIs (strings, dates...)<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                Muchos [tipos de datos](https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#section-Datatypes) provienen de XML Schema
+                Muchos <!-- .element: class="fragment" data-fragment-index="2" -->[tipos de datos](https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#section-Datatypes)<!-- .element: class="fragment" data-fragment-index="2" --> provienen de XML Schema<!-- .element: class="fragment" data-fragment-index="2" -->
 
 
                 </script>
@@ -232,10 +237,10 @@
                 <script type="text/template">
                 ## blank nodes
 
-                - A veces es útil representar un recurso sin usar un identificador.
-                - Se asemejan a variables en álgebra: representan algo cuyo valor se desconoce.
-                - Pueden aparecer en las posiciones de sujeto y objeto.
-                - Se usan para agrupar conjuntos de declaraciones.
+                - A veces es útil representar un recurso sin usar un identificador.<!-- .element: class="fragment" data-fragment-index="1" -->
+                - Se asemejan a variables en álgebra: representan algo cuyo valor se desconoce.<!-- .element: class="fragment" data-fragment-index="2" -->
+                - Pueden aparecer en las posiciones de sujeto y objeto.<!-- .element: class="fragment" data-fragment-index="3" -->
+                - Se usan para agrupar conjuntos de declaraciones.<!-- .element: class="fragment" data-fragment-index="4" -->
 
                 </script>
                 </section>
@@ -402,8 +407,8 @@
                 <script type="text/template">
                 ## vocabularios
 
-                - RDF se utiliza conjuntamente con vocabularios para proporcionar información semántica.
-                - Para definir vocabularios, RDF proporciona la herramienta básica RDF Schema (RDFs)
+                - RDF se utiliza conjuntamente con vocabularios para proporcionar información semántica.<!-- .element: class="fragment" data-fragment-index="1" -->
+                - Para definir vocabularios, RDF proporciona la herramienta básica RDF Schema (RDFs)<!-- .element: class="fragment" data-fragment-index="2" -->
 
                 </script>
                 </section>
@@ -412,12 +417,12 @@
                 <script type="text/template">
                 ## vocabularios
 
-                - Clase: categoría para clasificar recursos.
-                - Tipo: relación entre instancia y su clase correspondiente.
-                - Dominio: colección de tipos que usan una propiedad.
-                - Rango: tipos de valores que puede tomar una propiedad.
+                - Clase: categoría para clasificar recursos.<!-- .element: class="fragment" data-fragment-index="1" -->
+                - Tipo: relación entre instancia y su clase correspondiente.<!-- .element: class="fragment" data-fragment-index="2" -->
+                - Dominio: colección de tipos que usan una propiedad.<!-- .element: class="fragment" data-fragment-index="3" -->
+                - Rango: tipos de valores que puede tomar una propiedad.<!-- .element: class="fragment" data-fragment-index="4" -->
 
-                **un recurso se considera miembro de una clase por sus propiedades**
+                **un recurso se considera miembro de una clase por sus propiedades**<!-- .element: class="fragment" data-fragment-index="5" -->
 
 
                 </script>
