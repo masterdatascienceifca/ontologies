@@ -69,6 +69,7 @@
                 <section data-id="1" data-markdown>
                     <script type="text/template">
                         ### Ontologías
+                        - Introducción a la Web Semántica
                         - Introducción a RDF
                         - Introducción a Ontologías
                         - RDFs
@@ -79,6 +80,46 @@
                     </script>
                 </section>
                 </section>
+                <section>
+                        <section data-id="1" data-markdown>
+                                <script type="text/template">
+                                                        ## La Web Semántica
+                                                                                
+                                                        ![Portada de Scientific American 2001](./img/semantic_web.png)<!-- .element height="40%" width="40%" -->
+                                                                      
+                                                        </script>
+                        </section>
+                        <section data-id="1" data-markdown>
+                                <script type="text/template">
+                                        ### y linked open data
+                                        [![Parte de la nube de LOD](./img/lod-datasets_2009-07-14_cropped.png)](https://lod-cloud.net/)
+
+                                </script>
+                        </section>
+               
+                <section data-id="1" data-markdown>
+                        <script type="text/template">
+                                ### ¿en qué se basan?
+
+                                RDF + XML + ontologías <!-- .element: class="fragment" data-fragment-index="1" -->
+
+                                **sujeto - predicado - objeto** <!-- .element: class="fragment" data-fragment-index="2" -->
+
+                                    <http://example.org/bob#me>
+                                    <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
+                                    <http://xmlns.com/foaf/0.1/Person> .
+                                <!-- .element: class="fragment" data-fragment-index="3" -->
+
+                                ¡y SPARQL! <!-- .element: class="fragment" data-fragment-index="4" -->
+                        </script>
+                </section>
+                <section data-id="1" data-markdown>
+                        <script type="text/template">
+                                ### ¿cómo es una aplicación semántica?
+                                ![Arquitectura aplicación semántica](./img/despliegue.png)
+                        </script>
+                </section>
+        </section>
                 <section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
@@ -91,7 +132,7 @@
                 <script type="text/template">
                 ## ¿Qué es RDF?
 
-                > Un marco de trabajo para expresar información sobre recursos.<!-- .element: class="fragment" data-fragment-index="1" -->
+                ><!-- .element: class="fragment" data-fragment-index="1" --> Un marco de trabajo para expresar información sobre recursos.<!-- .element: class="fragment" data-fragment-index="1" -->
 
                 documentos, personas, objetos físicos y/o abstractos...<!-- .element: class="fragment" data-fragment-index="2" -->
 
@@ -155,6 +196,36 @@
                         <script type="text/template">
                             ### un esquema complicado
                             ![Esquema complejo](./img/data_model_hell.png)
+                        </script>
+                    </section>
+
+                    <section data-id="1" data-markdown>
+                        <script type="text/template">
+                            ### comparativa de paradigmas
+                            |Mundo Relacional|Mundo Semántico|
+                            |----------------|----------------|
+                            |Registro de tabla|Nodo RDF|
+                            |Columna de tabla|RDF property Type|
+                            |Celda de tabla|Valor|
+                            |Consulta SQL|Consulta SPARQL|
+                            |Modelo de datos|Ontología|
+                        </script>
+                    </section>
+
+                    <section data-id="1" data-markdown style="font-size:35px">
+                        <script type="text/template">
+                            ### almacenes RDF vs BDR
+                            - **Flexibilidad:** su esquema flexible permite realizar cambios sin paradas ni rediseños, cosa que no ocurre con una base de datos relacional.
+                            - **Estandarización:** el nivel de estandarización de RDF y SPARQL es mucho mayor que el de SQL. Es prácticamente inmediato sustituir un almacén de tripletas por otro, mientras que en el caso de las bases de datos relacionales es necesario tener en cuenta los distintos dialectos e implementaciones de SQL según el fabricante.
+                            - **Expresividad:** es mucho más sencillo modelar datos complejos y con elevado número de relaciones entre ellos en RDF que en SQL. Ocurre al contrario si los datos son de naturaleza tabular, naturalmente.
+                        </script>
+                    </section>
+                    <section data-id="1" data-markdown>
+                        <script type="text/template">
+                            ### almacenes RDF vs BDR
+                            no todo son ventajas...
+                            - **Madurez:** las bases de datos relacionales son mucho más maduras y presentan más funcionalidades que los almacenes de ternas.
+                            - **Coste de almacenamiento**: El coste por unidad de información almacenada en un almacén de ternas es mucho mayor que el de una base de datos relacional, lo cual puede ser crítico si se están tratando grandes volúmenes de datos.
                         </script>
                     </section>
 
@@ -495,7 +566,7 @@
                 ## Definición
                 Para un filósofo:<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                >Un sistema particular de categorías sistematizando cierta visión del mundo [Guarino, 1998]<!-- .element: class="fragment" data-fragment-index="2" -->
+                ><!-- .element: class="fragment" data-fragment-index="2" -->Un sistema particular de categorías sistematizando cierta visión del mundo [Guarino, 1998]<!-- .element: class="fragment" data-fragment-index="2" -->
 
                 </script>
                 </section>
@@ -504,7 +575,7 @@
 ## Definición
 Para un científico de datos:<!-- .element: class="fragment" data-fragment-index="1" -->
 
->Una especificación formal de una conceptualización compartida [Struder et. al., 1998]<!-- .element: class="fragment" data-fragment-index="2" -->
+><!-- .element: class="fragment" data-fragment-index="2" -->Una especificación formal de una conceptualización compartida [Struder et. al., 1998]<!-- .element: class="fragment" data-fragment-index="2" -->
 
 </script>
 </section>
@@ -591,7 +662,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 - En su naturaleza, es orientado a objetos<!-- .element: class="fragment" data-fragment-index="2" -->
                 - Declarar tipos es sencillo (frente a las PKs y FKs de una BDR)<!-- .element: class="fragment" data-fragment-index="3" -->
 
-                >su propósito es definir vocabularios compartidos entre aplicaciones para facilitar el intercambio de datos entre ellas<!-- .element: class="fragment" data-fragment-index="4" -->
+                ><!-- .element: class="fragment" data-fragment-index="4" -->su propósito es definir vocabularios compartidos entre aplicaciones para facilitar el intercambio de datos entre ellas<!-- .element: class="fragment" data-fragment-index="4" -->
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
@@ -600,7 +671,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
 
                 `rdf:type`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - Permite especificar que un concepto es instancia de una clase<!-- .element: class="fragment" data-fragment-index="2" -->
+                - <!-- .element: class="fragment" data-fragment-index="2" --> Permite especificar que un concepto es instancia de una clase<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex:miHondaCivic rdf:type ex:Vehiculo
                         ex:miHondaCivic rdf:type ex:ArticuloEnVenta
@@ -618,7 +689,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
 
                 `rdfs:property`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - Relacionan clases y propiedades<!-- .element: class="fragment" data-fragment-index="2" -->
+                - <!-- .element: class="fragment" data-fragment-index="2" -->Relacionan clases y propiedades<!-- .element: class="fragment" data-fragment-index="2" -->
 
                       ex:articuloEnVenta rdf:type rdf:Class
                       ex:precio rdf:type rdfs:property
@@ -635,8 +706,8 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
 
                 `rdfs:range`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - Dominio: conceptos a la que esa propiedad aplica<!-- .element: class="fragment" data-fragment-index="2" -->
-                - Rango: valores que la propiedad puede aceptar<!-- .element: class="fragment" data-fragment-index="3" -->
+                - <!-- .element: class="fragment" data-fragment-index="2" -->Dominio: conceptos a la que esa propiedad aplica<!-- .element: class="fragment" data-fragment-index="2" -->
+                - <!-- .element: class="fragment" data-fragment-index="3" -->Rango: valores que la propiedad puede aceptar<!-- .element: class="fragment" data-fragment-index="3" -->
 
                         ex:precio rdfs:domain rdf:ArticuloEnVenta
                         ex:precio rdfs:range XSD:int
@@ -651,8 +722,8 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
 
                 `subClassOf`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - Las instancias de una subclase lo son de su clase padre<!-- .element: class="fragment" data-fragment-index="2" -->
-                - Las propiedades de una clase lo son de su clase hija<!-- .element: class="fragment" data-fragment-index="3" -->
+                - <!-- .element: class="fragment" data-fragment-index="2" -->Las instancias de una subclase lo son de su clase padre<!-- .element: class="fragment" data-fragment-index="2" -->
+                - <!-- .element: class="fragment" data-fragment-index="3" -->Las propiedades de una clase lo son de su clase hija<!-- .element: class="fragment" data-fragment-index="3" -->
 
                         ex:cocheUsado rdfs:subClassOf rdf:ArticuloEnVenta
                 <!-- .element: class="fragment" data-fragment-index="4" -->
@@ -667,7 +738,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
 
                 `subPropertyOf`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - Propiedades incluidas en otra propiedad más general<!-- .element: class="fragment" data-fragment-index="2" -->
+                - <!-- .element: class="fragment" data-fragment-index="2" -->Propiedades incluidas en otra propiedad más general<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex:Madre rdfs:subPropertyOf rdf:Progenitor
                 <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -687,6 +758,22 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 - <!-- .element: class="fragment" data-fragment-index="4" -->`rdfs:SeeAlso`: enlaces a otras fuentes relevantes<!-- .element: class="fragment" data-fragment-index="4" -->
                 - <!-- .element: class="fragment" data-fragment-index="5" -->`rdfs:Literal`: tipo de dato primitivo<!-- .element: class="fragment" data-fragment-index="5" -->
 
+                </script>
+                </section>
+                <section data-id="1" data-markdown>
+                       
+                        <script type="text/template">
+                                ### ejercicio
+                                <!-- .slide: style="font-size:30px" -->
+                                Expresar el siguiente conocimiento en RDF y RDFs. Utilizar un espacio de nombres 'ex' para la ontología creada. Usar N-Triples como formato de serialización.
+                
+                                - El Curry Tailandés es un plato tailandés basado en leche de coco.
+                                - Pedro es alérgico a las nueces. 
+                                - Pedro come Curry Tailandés.
+                                - Todos los alérgicos a las nueces son compadecibles.
+                                - Todo lo que tenga la propiedad "platoTailandésBasadoEn" es Tailandés.
+                                - Todo lo que satisfaga la propiedad "platoTailandésBasadoEn" lleva nueces.
+                                - La propiedad "platoTailandésBasadoEn" es un caso especial de la propiedad "tieneIngrediente".
                 </script>
                 </section>
                 </section>
@@ -1557,8 +1644,8 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
 
                 <div>
                 <a href="https://masterdatascience.ifca.es/"><img alt="Logotipo Máster Data Science IFCA"  src="./img/logo_3.png" style="max-width: none; max-height: none; color: rgb(255, 153, 0);  vertical-align:middle;" /></a>
-                <p style="font-size:20px; text-align:center; margin-top: 1em"><span style="font-weight: bold;"><a href="https://github.com/masterdatascienceifca/ontologies">Acceso al repositorio con la presentación</a></span></p>
-                <p style="font-size:20px; text-align:center; margin-top: 1em"><span style="font-weight: bold;">URL de la presentación: <a href="https://masterdatascienceifca.github.io/ontologies/">https://masterdatascienceifca.github.io/ontologies/</a></span></p>
+                <p style="font-size:20px; text-align:center; margin-top: 1em"><span style="font-weight: bold;"><a href="https://github.com/masterdatascience-uimp-uc/ontologies">Acceso al repositorio con la presentación</a></span></p>
+                <p style="font-size:20px; text-align:center; margin-top: 1em"><span style="font-weight: bold;">URL de la presentación: <a href="https://masterdatascience-uimp-uc.github.io/ontologies/">https://masterdatascience-uimp-uc.github.io/ontologies/</a></span></p>
 
 
                 <p style="font-size:20px; text-align:center; margin-top: 1em"><span style="font-weight: bold;"><a href="https://twitter.com/predicador37">Miguel Expósito Martín</a></span></p>

@@ -1,13 +1,13 @@
-# Semántica: Redes semánticas
+# Semántica: Ontologías
 
-Presentación teórico-práctica sobre redes semánticas.
+Presentación teórico-práctica sobre ontologías, web semántica y RDF.
 
 ## ¿Cómo generar un PDF con las diapositivas?
 
 - Abrir un navegador Chrome
 - Introducir la URL de la presentación y añadirle el parámetro `print-pdf`. Ejemplo:
 
-     https://masterdatascienceifca.github.io/semantic-networks/index.html?print-pdf
+     https://masterdatascience-uimp-uc/ontologies/index.html?print-pdf
 
 - Seleccionar la opción `imprimir` de Chrome
 - Seleccionar el Destino `Guardar como PDF`
