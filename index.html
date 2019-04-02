@@ -740,7 +740,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
 
                 - <!-- .element: class="fragment" data-fragment-index="2" -->Propiedades incluidas en otra propiedad más general<!-- .element: class="fragment" data-fragment-index="2" -->
 
-                        ex:Madre rdfs:subPropertyOf rdf:Progenitor
+                        ex:tieneMadre rdfs:subPropertyOf rdf:tieneProgenitor
                 <!-- .element: class="fragment" data-fragment-index="3" -->
 
 
@@ -832,7 +832,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 - OWL permite especificar cómo usar un vocabulario y cómo no usarlo<!-- .element: class="fragment" data-fragment-index="2" -->
                 - OWL permite restringir los modelos de datos para permitir consultas más rápidas<!-- .element: class="fragment" data-fragment-index="3" -->
 
-                >En RDFs un recurso puede definirse como clase e instancia simultáneamente. OWL no lo permite.<!-- .element: class="fragment" data-fragment-index="4" -->
+                ><!-- .element: class="fragment" data-fragment-index="4" -->En RDFs un recurso puede definirse como clase e instancia simultáneamente. OWL no lo permite.<!-- .element: class="fragment" data-fragment-index="4" -->
 
                 </script>
                 </section>
@@ -844,7 +844,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
 
                 **meta-metadatos**<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - OWL ofrece anotaciones para enlazar modelos de datos<!-- .element: class="fragment" data-fragment-index="2" -->
+                -<!-- .element: class="fragment" data-fragment-index="2" --> OWL ofrece anotaciones para enlazar modelos de datos<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         owl:Import
                         owl:versionInfo
@@ -935,7 +935,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ##  OWL: clases y recursos
                 `intersectionOf`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - Cualquier instancia de la primera clase lo es también de las especificadas en la lista<!-- .element: class="fragment" data-fragment-index="2" -->
+                -<!-- .element: class="fragment" data-fragment-index="2" --> Cualquier instancia de la primera clase lo es también de las especificadas en la lista<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex:Madre     owl:intersectionOf    (ex:Mujer, ex:Progenitor)
                 <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -947,7 +947,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ##  OWL: clases y recursos
                 `unionOf`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - Cualquier instancia de la primera clase lo es también de <!-- .element: class="fragment" data-fragment-index="2" -->**al menos una** <!-- .element: class="fragment" data-fragment-index="2" -->especificadas en la lista<!-- .element: class="fragment" data-fragment-index="2" -->
+                -<!-- .element: class="fragment" data-fragment-index="2" --> Cualquier instancia de la primera clase lo es también de <!-- .element: class="fragment" data-fragment-index="2" -->**al menos una** <!-- .element: class="fragment" data-fragment-index="2" -->especificadas en la lista<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex:Progenitor     owl:unionOf    (:Madre, :Padre)
                 <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -958,7 +958,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ##  OWL: clases y recursos
                 `complementOf`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - La primera clase es equivalente a todo lo que no esté en la segunda<!-- .element: class="fragment" data-fragment-index="2" -->
+                -<!-- .element: class="fragment" data-fragment-index="2" --> La primera clase es equivalente a todo lo que no esté en la segunda<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex:Progenitor     owl:complementOf    ex:NoProgenitor
                 <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -969,7 +969,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ##  OWL: clases y recursos
                 `disjointWith`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - La primera clase y la segunda no tienen miembros en común<!-- .element: class="fragment" data-fragment-index="2" -->
+                - <!-- .element: class="fragment" data-fragment-index="2" -->La primera clase y la segunda no tienen miembros en común<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex:Hombre     owl:disjointWith    ex:Mujer
                 <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -980,10 +980,12 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ##  OWL: clases y recursos
                 `equivalentClass`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - La primera clase y la segunda contienen los mismos miembros<!-- .element: class="fragment" data-fragment-index="2" -->
+                -<!-- .element: class="fragment" data-fragment-index="2" --> La primera clase y la segunda contienen los mismos miembros<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex:HumanoHembraAdulto     owl:equivalentClass    ex:Mujer
                 <!-- .element: class="fragment" data-fragment-index="3" -->
+
+                ¡No implica igualdad de clases! (no denotan los mismos conceptos)<!-- .element: class="fragment" data-fragment-index="4" -->
                 </script>
                 </section>
 
@@ -992,10 +994,12 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ##  OWL: clases y recursos
                 `sameAs`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - El primer recurso se refiere exactamente al mismo que el segundo<!-- .element: class="fragment" data-fragment-index="2" -->
+                -<!-- .element: class="fragment" data-fragment-index="2" --> El primer recurso se refiere exactamente al mismo que el segundo<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex:Spiderman     owl:sameAs    ex:PeterParker
                 <!-- .element: class="fragment" data-fragment-index="3" -->
+
+                Enlaza a dos individuos <!-- .element: class="fragment" data-fragment-index="4" -->
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
@@ -1003,7 +1007,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ##  OWL: clases y recursos
                 `differentFrom`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - El primer recurso se refiere a uno distinto del segundo<!-- .element: class="fragment" data-fragment-index="2" -->
+                - <!-- .element: class="fragment" data-fragment-index="2" -->El primer recurso se refiere a uno distinto del segundo<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex:AnaPastorMinistra    owl:differentFrom    ex:AnaPastorPeriodista
                 <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -1040,7 +1044,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ##  OWL: propiedades
                 `TransitiveProperty` <!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - Si la propiedad enlaza A con B y B con C, también enlaza A con C <!-- .element: class="fragment" data-fragment-index="2" -->
+                - <!-- .element: class="fragment" data-fragment-index="2" -->Si la propiedad enlaza A con B y B con C, también enlaza A con C <!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex:tieneAncestro
                 <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -1051,7 +1055,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ##  OWL: propiedades
                 `SymmetricProperty`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - Si la propiedad relaciona A con B, también B con A<!-- .element: class="fragment" data-fragment-index="2" -->
+                - <!-- .element: class="fragment" data-fragment-index="2" -->Si la propiedad relaciona A con B, también B con A<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex:tieneConyuge
                 <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -1062,7 +1066,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ##  OWL: propiedades
                 `AsymmetricProperty`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - Si la propiedad relaciona A con B, nunca relaciona B con A<!-- .element: class="fragment" data-fragment-index="2" -->
+                - <!-- .element: class="fragment" data-fragment-index="2" -->Si la propiedad relaciona A con B, nunca relaciona B con A<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex:tieneHijo
                 <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -1073,7 +1077,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ##  OWL: propiedades
                 `ReflexiveProperty`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - La propiedad enlaza algo consigo mismo<!-- .element: class="fragment" data-fragment-index="2" -->
+                - <!-- .element: class="fragment" data-fragment-index="2" -->La propiedad enlaza algo consigo mismo<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex:viveCon
                 <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -1084,7 +1088,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ##  OWL: propiedades
                 `IrreflexiveProperty`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - La propiedad nunca enlaza algo consigo mismo<!-- .element: class="fragment" data-fragment-index="2" -->
+                - <!-- .element: class="fragment" data-fragment-index="2" -->La propiedad nunca enlaza algo consigo mismo<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex:tieneConyuge
                 <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -1095,9 +1099,9 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ##  OWL: propiedades
                 `FunctionalProperty`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - La propiedad solo enlaza como mucho con un recurso<!-- .element: class="fragment" data-fragment-index="2" -->
+                - <!-- .element: class="fragment" data-fragment-index="2" -->La propiedad solo enlaza como mucho con un recurso<!-- .element: class="fragment" data-fragment-index="2" -->
 
-                        `ex:cumpleAños`
+                        ex:cumpleAños
                 <!-- .element: class="fragment" data-fragment-index="3" -->
                 </script>
                 </section>
@@ -1106,7 +1110,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ##  OWL: propiedades
                 `InverseFunctionalProperty`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - El sujeto de esta propiedad se identifica unívocamente por el valor de la misma<!-- .element: class="fragment" data-fragment-index="2" -->
+                - <!-- .element: class="fragment" data-fragment-index="2" -->El sujeto de esta propiedad se identifica unívocamente por el valor de la misma<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex:tieneDNI
                 <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -1118,7 +1122,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ##  OWL: propiedades
                 `InverseOf`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - Las dos propiedades son inversas la una de la otra<!-- .element: class="fragment" data-fragment-index="2" -->
+                - <!-- .element: class="fragment" data-fragment-index="2" -->Las dos propiedades son inversas la una de la otra<!-- .element: class="fragment" data-fragment-index="2" -->
 
                        ex:tieneHijo    owl:InverseOf    ex:tieneProgenitor
                 <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -1130,16 +1134,16 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ##  OWL: propiedades
                 `equivalentProperty`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - Las dos propiedades son exactamente las mismas, aunque tengan distinta intencionalidad<!-- .element: class="fragment" data-fragment-index="2" -->
+                - <!-- .element: class="fragment" data-fragment-index="2" -->Las dos propiedades son exactamente las mismas, aunque tengan distinta intencionalidad<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex:fechaNacimiento    owl:equivalentProperty   ex:cumpleAños
                 <!-- .element: class="fragment" data-fragment-index="3" -->
                 </script>
                 </section>
-                <section data-id="1" data-markdown>
+                <section data-id="1" data-markdown style="font-size:30px;">
                 <script type="text/template">
                 ##  OWL: restricciones
-                >Una restricción es una clase que se define por una descripción de sus miembros en términos de propiedades existentes y clases.<!-- .element: class="fragment" data-fragment-index="1" -->
+                ><!-- .element: class="fragment" data-fragment-index="1" -->Una restricción es una clase que se define por una descripción de sus miembros en términos de propiedades existentes y clases.<!-- .element: class="fragment" data-fragment-index="1" -->
                 `owl:onProperty`<!-- .element: class="fragment" data-fragment-index="1" --> especifica qué propiedad se va a usar en la definición de la clase restricción<!-- .element: class="fragment" data-fragment-index="1" -->
 
                 Se usa la notación [...] para referirse a un nodo anónimo que será sujeto de todas las tripletas (una por línea, separadas por ;)<!-- .element: class="fragment" data-fragment-index="2" -->
@@ -1151,7 +1155,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ##  OWL: restricciones
                 `cardinality, min-cardinality, max-cardinality`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - La propiedad puede tener un determinado número de valores<!-- .element: class="fragment" data-fragment-index="2" -->
+                - <!-- .element: class="fragment" data-fragment-index="2" -->La propiedad puede tener un determinado número de valores<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex:Coche   owl:equivalentClass
                         [  rdf:type owl:Restriction;
@@ -1167,7 +1171,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ##  OWL: restricciones
                 `hasValue`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - Todos los objetos de la propiedad tienen el valor especificado<!-- .element: class="fragment" data-fragment-index="2" -->
+                -<!-- .element: class="fragment" data-fragment-index="2" -->Todos los objetos de la propiedad tienen el valor especificado<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex:HijosDePepe   owl:equivalentClass
                         [  rdf:type owl:Restriction;
@@ -1183,7 +1187,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ##  OWL: restricciones
                 `someValuesFrom`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - Al menos un objeto de esa propiedad es miembro de la clase especificada<!-- .element: class="fragment" data-fragment-index="2" -->
+                - <!-- .element: class="fragment" data-fragment-index="2" -->Al menos un objeto de esa propiedad es miembro de la clase especificada<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex:Padre   owl:equivalentClass
                         [  rdf:type owl:Restriction;
@@ -1199,7 +1203,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ##  OWL: restricciones
                 `allValuesFrom`<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - Todos los objetos de esa propiedad son miembros de la clase especificada<!-- .element: class="fragment" data-fragment-index="2" -->
+                - <!-- .element: class="fragment" data-fragment-index="2" -->Todos los objetos de esa propiedad son miembros de la clase especificada<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex:Vegetariano   owl:equivalentClass
                           [  rdf:type owl:Restriction;
@@ -1228,7 +1232,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
 
                 ¿Qué es un KOS?<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                > Un conjunto de elementos, controlados y estructurados, que pueden utilizarse para describir e indexar objetos, navegar por colecciones, etc. Se utilizan comúnmente en bibliotecas, museos y otras áreas.<!-- .element: class="fragment" data-fragment-index="2" -->
+                > <!-- .element: class="fragment" data-fragment-index="2" -->Un conjunto de elementos, controlados y estructurados, que pueden utilizarse para describir e indexar objetos, navegar por colecciones, etc. Se utilizan comúnmente en bibliotecas, museos y otras áreas.<!-- .element: class="fragment" data-fragment-index="2" -->
 
                 SKOS nace para permitir crear organizaciones de conocimiento modulares que puedan ser reutilizadas y referenciadas en la Web.<!-- .element: class="fragment" data-fragment-index="3" -->
 
@@ -1261,7 +1265,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 - los KOS se usan para organizar conocimiento, las ontologías para representarlo.<!-- .element: class="fragment" data-fragment-index="1" -->
                 - Los KOS son semánticamente mucho menos rigurosos que las ontologías.<!-- .element: class="fragment" data-fragment-index="2" -->
 
-                >Llevando los KOS a la Web Semántica se consigue hacer estos esquemas legibles por máquinas, promover la reutilización y potenciar la interoperabilidad<!-- .element: class="fragment" data-fragment-index="3" -->
+                ><!-- .element: class="fragment" data-fragment-index="3" -->Llevando los KOS a la Web Semántica se consigue hacer estos esquemas legibles por máquinas, promover la reutilización y potenciar la interoperabilidad<!-- .element: class="fragment" data-fragment-index="3" -->
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
@@ -1281,7 +1285,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
 
                 elemento fundamental del vocabulario SKOS.<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                >Los conceptos son unidades de pensamiento, ideas o significados que subyacen en los sistemas de organización del conocimiento<!-- .element: class="fragment" data-fragment-index="2" -->
+                ><!-- .element: class="fragment" data-fragment-index="2" -->Los conceptos son unidades de pensamiento, ideas o significados que subyacen en los sistemas de organización del conocimiento<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex:Animal   rdf:type    skos:Concept
                 <!-- .element: class="fragment" data-fragment-index="3" -->
@@ -1317,7 +1321,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ## SKOS: etiquetas
                 `skos:altLabel`<!-- .element: class="fragment" data-fragment-index="1" -->
                 - Permite asignar una etiqueta léxica alternativa a un recurso.<!-- .element: class="fragment" data-fragment-index="2" -->
-                - Se utiliza para representar sinónimos, abreviaturas, acrónimos...<!-- .element: class="fragment" data-fragment-index="3" -->
+                - <!-- .element: class="fragment" data-fragment-index="3" -->Se utiliza para representar sinónimos, abreviaturas, acrónimos...<!-- .element: class="fragment" data-fragment-index="3" -->
 
                         ex:Animal
                           rdf:type          skos:Concept;
@@ -1334,7 +1338,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 `skos:hiddenLabel`<!-- .element: class="fragment" data-fragment-index="1" -->
                 - Permite asignar una etiqueta léxica oculta a un recurso.<!-- .element: class="fragment" data-fragment-index="2" -->
                 - Se utiliza para alimentar motores de búsqueda o indexado de forma no visible.<!-- .element: class="fragment" data-fragment-index="3" -->
-                - Se suelen usar para incluir errores tipográficos frecuentes<!-- .element: class="fragment" data-fragment-index="4" -->
+                - <!-- .element: class="fragment" data-fragment-index="4" -->Se suelen usar para incluir errores tipográficos frecuentes<!-- .element: class="fragment" data-fragment-index="4" -->
 
                         ex:Animal
                           rdf:type          skos:Concept;
@@ -1360,7 +1364,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## SKOS: relaciones semánticas
-                >El significado de un concepto no sólo se define por las palabras en lenguaje natural almacenadas en sus etiquetas, sino por sus relaciones con otros conceptos en el vocabulario<!-- .element: class="fragment" data-fragment-index="1" -->
+                ><!-- .element: class="fragment" data-fragment-index="1" -->El significado de un concepto no sólo se define por las palabras en lenguaje natural almacenadas en sus etiquetas, sino por sus relaciones con otros conceptos en el vocabulario<!-- .element: class="fragment" data-fragment-index="1" -->
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
@@ -1372,7 +1376,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
 
                 - <!-- .element: class="fragment" data-fragment-index="2" -->`skos:broader` <!-- .element: class="fragment" data-fragment-index="2" --><!-- .element: class="fragment" data-fragment-index="2" -->*se lee tiene un concepto más amplio*<!-- .element: class="fragment" data-fragment-index="2" -->
                 - Una es la inversa de la otra<!-- .element: class="fragment" data-fragment-index="3" -->
-                - No son transitivas<!-- .element: class="fragment" data-fragment-index="4" -->
+                - <!-- .element: class="fragment" data-fragment-index="4" -->No son transitivas<!-- .element: class="fragment" data-fragment-index="4" -->
 
                         ex:mamíferos rdf:type skos:Concept;
                           skos:prefLabel "mamíferos"@es;
@@ -1389,7 +1393,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
 
                 - Es una relación simétrica<!-- .element: class="fragment" data-fragment-index="2" -->
                 - No es transitiva<!-- .element: class="fragment" data-fragment-index="3" -->
-                - Es disjunta con <!-- .element: class="fragment" data-fragment-index="4" -->`skos:broader,skos:narrower`<!-- .element: class="fragment" data-fragment-index="4" -->
+                - <!-- .element: class="fragment" data-fragment-index="4" -->Es disjunta con <!-- .element: class="fragment" data-fragment-index="4" -->`skos:broader,skos:narrower`<!-- .element: class="fragment" data-fragment-index="4" -->
 
                         ex:pájaros rdf:type skos:Concept;
                           skos:prefLabel "pájaros"@es;
@@ -1415,7 +1419,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ## SKOS: concept schemes
                 `skos:hasTopConcept`<!-- .element: class="fragment" data-fragment-index="1" -->
                 - Propiedad que permite enlazar un concept scheme con el resto de conceptos que contiene.<!-- .element: class="fragment" data-fragment-index="2" -->
-                - Punto de acceso a la jerarquía de conocimiento.<!-- .element: class="fragment" data-fragment-index="3" -->
+                - <!-- .element: class="fragment" data-fragment-index="3" -->Punto de acceso a la jerarquía de conocimiento.<!-- .element: class="fragment" data-fragment-index="3" -->
 
                         ex:tesauroAnimal rdf:type skos:ConceptScheme;
                           skos:hasTopConcept ex:mamíferos;
@@ -1428,7 +1432,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ## SKOS: enlazado de conceptos
                 `skos:closeMatch`<!-- .element: class="fragment" data-fragment-index="1" -->
                 - Implica que dos conceptos son lo suficientemente cercanos como para poder ser utilizados indistintamente.<!-- .element: class="fragment" data-fragment-index="2" -->
-                - No es transitiva<!-- .element: class="fragment" data-fragment-index="3" -->
+                - <!-- .element: class="fragment" data-fragment-index="3" -->No es transitiva<!-- .element: class="fragment" data-fragment-index="3" -->
 
                         dbpedia:Tennis rdf:type skos:ConceptScheme;
                           skos:prefLabel "tenis"@es;
@@ -1442,36 +1446,19 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 `skos:exactMatch`<!-- .element: class="fragment" data-fragment-index="1" -->
                 - Implica que dos conceptos tienen significados equivalentes<!-- .element: class="fragment" data-fragment-index="2" -->
                 - Sí es transitiva<!-- .element: class="fragment" data-fragment-index="3" -->
-                - Es un enlace más fuerte que <!-- .element: class="fragment" data-fragment-index="4" -->`closeMatch`<!-- .element: class="fragment" data-fragment-index="4" -->
+                - <!-- .element: class="fragment" data-fragment-index="4" -->`closeMatch`<!-- .element: class="fragment" data-fragment-index="4" -->Es un enlace más fuerte que <!-- .element: class="fragment" data-fragment-index="4" -->`closeMatch`<!-- .element: class="fragment" data-fragment-index="4" -->
 
                         ex1:animal skos:exactMatch ex2:animals.
                 <!-- .element: class="fragment" data-fragment-index="5" -->
                 </script>
                 </section>
-                    <section data-id="1" data-markdown>
-                        <script type="text/template">
-                            ## SKOS: enlazado de conceptos
-                            `skos:exactMatch vs owl:sameAs`<!-- .element: class="fragment" data-fragment-index="1" -->
-
-                                    ex1:animal owl:sameAs ex2:animals
-
-                                    ex1:animal rdf:type skos:Concept;
-                                      skos:prefLabel "animal"@en;
-                                      skos:inScheme ex1:referenceAnimalScheme.
-                                    ex2:animals skos:prefLabel "animals"@en;
-                                      skos:inScheme ex2:eggSellerScheme.
-                            <!-- .element: class="fragment" data-fragment-index="2" -->
-
-                            ##### un concepto no puede tener dos etiquetas preferidas en el mismo idioma<!-- .element: class="fragment" data-fragment-index="3" -->
-
-                        </script>
-                    </section>
+                    
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## SKOS: reutilización
                 <!-- .slide: style="font-size:30px" -->
                 `skos:inScheme`<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Permite reutilizar conceptos de un esquema en otro.<!-- .element: class="fragment" data-fragment-index="2" -->
+                - <!-- .element: class="fragment" data-fragment-index="2" -->Permite reutilizar conceptos de un esquema en otro.<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex1:referenceAnimalScheme rdf:type skos:ConceptScheme;
                           dct:title "Reference list of animals"@en.
@@ -1480,7 +1467,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                           skos:inScheme ex1:referenceAnimalScheme.
                 <!-- .element: class="fragment" data-fragment-index="3" -->
 
-                - La referencia a ex1:cats podría incluirse en otro esquema:<!-- .element: class="fragment" data-fragment-index="4" -->
+                - <!-- .element: class="fragment" data-fragment-index="4" -->La referencia a ex1:cats podría incluirse en otro esquema:<!-- .element: class="fragment" data-fragment-index="4" -->
 
                         ex2:catScheme rdf:type skos:ConceptScheme;
                         dct:title "The Complete Cat Thesaurus"@en.
@@ -1492,7 +1479,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 <script type="text/template">
                 ## SKOS: colecciones
                 `skos:Collection`<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Permite agrupar conceptos en una colección<!-- .element: class="fragment" data-fragment-index="2" -->
+                - <!-- .element: class="fragment" data-fragment-index="2" -->Permite agrupar conceptos en una colección<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex:Francia rdf:type skos:Concept.
                         ex:España rdf:type skos:Concept.
@@ -1509,7 +1496,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 <script type="text/template">
                 ## SKOS: colecciones
                 `skos:OrderedCollection`<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Capturan orden entre los elementos<!-- .element: class="fragment" data-fragment-index="2" -->
+                - <!-- .element: class="fragment" data-fragment-index="2" -->Capturan orden entre los elementos<!-- .element: class="fragment" data-fragment-index="2" -->
 
                         ex:niños rdf:type skos:Concept.
                         ex:adolescentes rdf:type skos:Concept.
