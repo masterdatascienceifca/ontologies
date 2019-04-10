@@ -1626,6 +1626,8 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
 
                         </script>
                     </section>
+                </section>
+                <section>
 
                     <section data-id="1" data-markdown>
                         <script type="text/template">
@@ -1635,12 +1637,189 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
 
                         </script>
                     </section>
-
                     <section data-id="1" data-markdown>
                         <script type="text/template">
-                            ##  ejercicio: pizzas
-                            - [toppings](https://gist.github.com/predicador37/23a8ebead3e3cded708d89e0ee1ef5fe)
+                            ##  classes
+                            - As mentioned previously, OWL classes are interpreted as sets of individuals (or sets of objects).
+                            - The class `Thing` is the class that represents the set containing all individuals. 
+                            - Because of this all classes are subclasses of `Thing`.
 
+                            All classes in Protege should start with a capital letter and should not contain spaces.
+
+
+
+                        </script>
+                    </section>
+                    <section data-id="1" data-markdown style="font-size:35px;">
+                        <script type="text/template">
+                    ##  classes
+                    >OWL Classes are assumed to `overlap`. We therefore cannot assume that an individual is not a member of a particular class simply because it has not been asserted to be a member of that class.  In order to ‘separate’ a group of classes, we must make them disjoint from one another.
+
+                    This ensures that an individual which has been asserted to be a member of one of the classes in the group cannot be a member of any other classes in that group.
+                </script>
+        </section>
+        <section data-id="1" data-markdown>
+                <script type="text/template">
+                    ##  subclasses
+                    What does it actually mean to be a subclass of something in OWL?
+
+                    In OWL, subclass means **necessary implication**: all instances of the subclass are instances of the parent class too.
+
+        
+
+                </script>
+            </section>
+            <section data-id="1" data-markdown>
+                <script type="text/template">
+                    ##  object properties
+                  
+                    >Object properties are relationships between two individuals: they link an individual to an individual.
+
+                    Recommendations: property names start with a lower case letter, have no spaces and have the remaining words capitalised. It is also recommended that they are prefixed withthe word ‘has’, or the word ‘is’.
+                </script>
+            </section>
+
+            <section data-id="1" data-markdown>
+                <script type="text/template">
+                    ##  functional properties
+                    - If a property is functional, for a given individual, there can be at most one individual that is related to the individual via the property.
+                    
+                    - Functional properties are also known as single valued properties and also features.
+
+                    - If a property is transitive then it cannot be functional.
+                  
+                </script>
+            </section>
+            <section data-id="1" data-markdown>
+                <script type="text/template">
+                    ##  domain and range
+                    - Properties link individuals from the domain to individuals from the range.
+
+                    - It is important to realise that in OWL domains and ranges should not be viewed as constraints to be checked. They are used as ‘axioms’ in reasoning.
+
+                    - It is possible to specify multiple classes as the range for a property. If multiple classes are specified in Protege, the range of the property is interpreted to be the intersection of the classes.
+                </script>
+            </section>
+            <section data-id="1" data-markdown>
+                <script type="text/template">
+                    ##  property restrictions
+                    >A restriction describes a class of individuals based on the relationships that members of the class participate in. In other words, a restriction is a kind of class, in the same way that a named class is a kind of class.
+
+                    i.e. The class of individuals that have at least one has `Topping` relationship to individuals that are members of `MozzarellaTopping`.
+                </script>
+            </section>
+            <section data-id="1" data-markdown>
+                <script type="text/template">
+                   ##  existential restrictions
+                   >Existential restrictions describe classes of individuals that participate in at least one relationship along a specified property to individuals that are members of a specified class. 
+                   
+                   For example, "the class of individuals that have at least one (**some**) `hasTopping` relationship to members of `MozzarellaTopping`".
+                </script>
+            </section>
+
+            <section data-id="1" data-markdown>
+                <script type="text/template">
+                   ##  universal restrictions
+                   >Universal restrictions describe classes of individuals that for a given property only have relationships along this property to individuals that are members of a specified class.
+                   
+                   For example, "the class of individuals that only have `hasTopping` relationships to members of `VegetableTopping`".
+                </script>
+            </section>
+
+            <section data-id="1" data-markdown>
+                <script type="text/template">
+                   ##  necessary and sufficient conditions
+                   >Necessary conditions can be read as: "If something is a member of this class then it is necessary to fulfil these conditions".  
+                   
+                   With necessary conditions alone, we cannot say that: "If something fulfils these conditions then it must be a member of this class"
+
+                 
+                   
+                </script>
+            </section>
+            <section data-id="1" data-markdown>
+                <script type="text/template">
+                ##  necessary and sufficient conditions
+                - A class that only has necessary conditions is known as a **Primitive Class**.
+                - A class that has at least one set of necessary and sufficient conditions is known as a **Defined Class**.
+                </script>
+        </section>
+        <section data-id="1" data-markdown>
+                <script type="text/template">
+                ##  necessary and sufficient conditions
+                >In Protege, in order to convert necessary conditions to necessary and sufficient conditions, the conditions must bemoved from under the `SubclassOf` header in the class description view to be under the `EquivalentClass` header.
+
+                Necessary conditions are simply called `SubClassesOf` in Protege. Necessary and sufficient conditions are called `Equivalent classes`.
+                </script>
+        </section>
+
+        <section data-id="1" data-markdown style="font-size:35px;">
+                <script type="text/template">
+                ##  necessary and sufficient conditions
+                - To summarise: If class A is described using necessary conditions, then we can say that if an individual is a member of class A, it must satisfy the conditions.
+                - We cannot say that any (random) individual that satisfies these conditions must be a member of class A.
+                - However, if class A is now defined using necessary and sufficient conditions, we can say that if an individual is a member of the class A, it must satisfy the conditions and we can now say that if any (random) individual satisfies these conditions, then it must be a member of class A.
+                </script>
+        </section>
+
+        <section data-id="1" data-markdown style="font-size:35px;">
+                <script type="text/template">
+                ##  closure axioms
+                >A closure axiom on a property consists of a universal restriction that acts along the property to say that it can only be filled by the specified fillers. The restriction has a filler that is the union of the fillers that occur in the existential restrictions for the property.
+                
+                For example, the closure axiom on the `hasTopping` property for `MargheritaPizza` is a universal restriction that acts along the `hasTopping` property, with a filler that is the union  of `MozzarellaTopping` and also `TomatoTopping`.
+
+                </script>
+        </section>
+        <section data-id="1" data-markdown style="font-size:35px;">
+                <script type="text/template">
+                ##  covering axioms
+                >A covering axiom consists of two parts: the class that is being ‘covered’, and the classes that form the covering. 
+                
+                For example, suppose we have three classes A, B and C. Classes B and C are subclasses of class A. Now suppose that we have a covering axiom that specifies class A is covered by class B and also class C. This means that a member of class A must be a member of B and/or C.
+
+                </script>
+        </section>
+        <section data-id="1" data-markdown style="font-size:35px;">
+                <script type="text/template">
+                ##  covering axioms
+                >In Protege, a covering axiom manifests itself as a class that is the union of the classes being covered, which forms a superclass of the class being covered.
+                
+                A subclassOf B union C
+
+                </script>
+        </section>
+        <section data-id="1" data-markdown style="font-size:35px;">
+                <script type="text/template">
+                ##  cardinality restrictions
+                > In OWL we can describe the class of individuals that have at least, at most or exactly a specified number of relationships with other individuals or datatype values. The restrictions that describe these classes are known as Cardinality Restrictions.
+
+                
+                </script>
+        </section>
+        <section data-id="1" data-markdown style="font-size:35px;">
+                <script type="text/template">
+                ##  cardinality restrictions
+        
+                - For a given property P, a Minimum Cardinality Restriction specifies the **minimum** number of P relationships that an individual must participate in.
+                - A Maximum Cardinality Restriction specifies the **maximum** number of P relationships that an individual can participate in.
+                - A Cardinality Restriction specifies the **exact** number of P relationships that an individual must participate in.
+                </script>
+        </section>
+        <section data-id="1" data-markdown style="font-size:35px;">
+                <script type="text/template">
+                ##  qualified cardinality restrictions
+        
+                >Qualified Cardinality Restrictions (QCR) are more specific than cardinality restrictions in that they state the class of objects within the restriction.
+
+                An unqualified cardinality restriction is exactly the same as a qualified cardinality restriction with a filler of Thing: `hasTopping min 3 Thing`
+                </script>
+        </section>
+            
+                    <section data-id="1" data-markdown>
+                        <script type="text/template">
+                            ##  exercise: pizza ontology
+                            - [toppings](https://gist.github.com/predicador37/23a8ebead3e3cded708d89e0ee1ef5fe)
 
                         </script>
                     </section>
