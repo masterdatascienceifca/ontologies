@@ -72,7 +72,7 @@
                         - Introducción a la Web Semántica
                         - Introducción a RDF
                         - Introducción a Ontologías
-                        - RDFs
+                        - RDFS
                         - OWL
                         - SKOS
 
@@ -101,16 +101,16 @@
                         <script type="text/template">
                                 ### ¿en qué se basan?
 
-                                RDF + XML + ontologías <!-- .element: class="fragment" data-fragment-index="1" -->
+                                RDF + XML + ontologías 
 
-                                **sujeto - predicado - objeto** <!-- .element: class="fragment" data-fragment-index="2" -->
+                                **sujeto - predicado - objeto** 
 
                                     <http://example.org/bob#me>
                                     <http://www.w3.org/1999/02/22-rdf-syntax-ns#type>
                                     <http://xmlns.com/foaf/0.1/Person> .
-                                <!-- .element: class="fragment" data-fragment-index="3" -->
+                                
 
-                                ¡y SPARQL! <!-- .element: class="fragment" data-fragment-index="4" -->
+                                ¡y SPARQL! 
                         </script>
                 </section>
                 <section data-id="1" data-markdown>
@@ -132,12 +132,12 @@
                 <script type="text/template">
                 ## ¿Qué es RDF?
 
-                ><!-- .element: class="fragment" data-fragment-index="1" --> Un marco de trabajo para expresar información sobre recursos.<!-- .element: class="fragment" data-fragment-index="1" -->
+                > Un marco de trabajo para expresar información sobre **recursos**.
 
-                documentos, personas, objetos físicos y/o abstractos...<!-- .element: class="fragment" data-fragment-index="2" -->
+                documentos, personas, objetos físicos y/o abstractos...<!-- .element: class="fragment" data-fragment-index="1" -->
 
-                - información en la web necesita ser procesada por aplicaciones<!-- .element: class="fragment" data-fragment-index="3" -->
-                - RDF ofrece un marco común sin pérdida de significado<!-- .element: class="fragment" data-fragment-index="4" -->
+                - información en la web necesita ser procesada por aplicaciones<!-- .element: class="fragment" data-fragment-index="2" -->
+                - RDF ofrece un marco común sin pérdida de significado<!-- .element: class="fragment" data-fragment-index="2" -->
 
                 </script>
                 </section>
@@ -145,36 +145,21 @@
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                  ## ¿Para qué RDF?
-                 - para añadir información legible para motores de búsqueda<!-- .element: class="fragment" data-fragment-index="1" -->
-                 - para enriquecer un dataset <!-- .element: class="fragment" data-fragment-index="2" -->[enlazándolo](http://lod-cloud.net/)<!-- .element: class="fragment" data-fragment-index="2" --> con datasets de terceros<!-- .element: class="fragment" data-fragment-index="2" -->
-                 - para entrelazar feeds de APIs, facilitando su descubrimiento<!-- .element: class="fragment" data-fragment-index="3" -->
-                 - para construir agregaciones de datos sobre determinados temas<!-- .element: class="fragment" data-fragment-index="4" -->
+                 - para añadir información legible para motores de búsqueda
+                 - para enriquecer un dataset [enlazándolo](http://lod-cloud.net/) con datasets de terceros
+                 - para entrelazar feeds de APIs, facilitando su descubrimiento
+                 - para construir agregaciones de datos sobre determinados temas
 
                 </script>
                 </section>
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## ¿Para qué RDF?
-                - para proporcionar un estándar de intercambio de datos entre BBDDs<!-- .element: class="fragment" data-fragment-index="1" -->
-                - para permitir consultas cruzadas a datasets de una organización<!-- .element: class="fragment" data-fragment-index="2" -->
-                - para enriquecer, describir y contextualizar los datos<!-- .element: class="fragment" data-fragment-index="3" -->
-                - para fomentar nuevas asociaciones entre datasets<!-- .element: class="fragment" data-fragment-index="4" -->
-
-
-                </script>
-                </section>
-
-                <section data-id="1" data-markdown>
-                <script type="text/template">
-                ## ¿Y el modelo relacional?
-                - una tabla es fácil de mostrar, ordenar y editar<!-- .element: class="fragment" data-fragment-index="1" -->
-                - su semántica está en las filas y columnas de sus tablas<!-- .element: class="fragment" data-fragment-index="2" -->
-                - una BDR permite cruzar varias tablas de forma estándar<!-- .element: class="fragment" data-fragment-index="3" -->
-                - evolucionar los esquemas es complejo:<!-- .element: class="fragment" data-fragment-index="4" -->
-
-                datos + consultas<!-- .element: class="fragment" data-fragment-index="4" -->
-
+                ## ¿Para qué RDF? (II)
+                - para proporcionar un estándar de intercambio de datos entre BBDDs
+                - para permitir consultas cruzadas a datasets de una organización
+                - para enriquecer, describir y contextualizar los datos
+                - para fomentar nuevas asociaciones entre datasets
 
 
                 </script>
@@ -183,11 +168,26 @@
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## ¿Y el modelo relacional?
-                - además, los esquemas se pueden volver tremendamente complicados<!-- .element: class="fragment" data-fragment-index="1" -->
+                - una tabla es fácil de mostrar, ordenar y editar
+                - su semántica está en las filas y columnas de sus tablas
+                - una BDR permite cruzar varias tablas de forma estándar
+                - evolucionar los esquemas es complejo:
 
-                soluciones: procedimientos almacenados y ORMs<!-- .element: class="fragment" data-fragment-index="2" -->
+                datos + consultas
 
-                #### a veces, es necesario modelar para lo inesperado: flexibilidad<!-- .element: class="fragment" data-fragment-index="3" -->
+
+
+                </script>
+                </section>
+
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## ¿Y el modelo relacional? (II)
+                - además, los esquemas se pueden volver tremendamente complicados
+
+                soluciones: procedimientos almacenados y ORMs
+
+                #### a veces, es necesario modelar para lo inesperado: flexibilidad
 
                 </script>
                 </section>
@@ -222,7 +222,7 @@
                     </section>
                     <section data-id="1" data-markdown>
                         <script type="text/template">
-                            ### almacenes RDF vs BDR
+                            ### almacenes RDF vs BDR (II)
                             no todo son ventajas...
                             - **Madurez:** las bases de datos relacionales son mucho más maduras y presentan más funcionalidades que los almacenes de ternas.
                             - **Coste de almacenamiento**: El coste por unidad de información almacenada en un almacén de ternas es mucho mayor que el de una base de datos relacional, lo cual puede ser crítico si se están tratando grandes volúmenes de datos.
@@ -233,13 +233,13 @@
                 <script type="text/template">
                 ## modelo de datos RDF
 
-                - RDF permite hacer declaraciones sobre recursos.<!-- .element: class="fragment" data-fragment-index="1" -->
-                - El formato de una declaración es sencillo:<!-- .element: class="fragment" data-fragment-index="2" -->
+                - RDF permite hacer declaraciones sobre recursos.
+                - El formato de una declaración es sencillo:
 
-                **sujeto + predicado + objeto**<!-- .element: class="fragment" data-fragment-index="3" -->
+                **sujeto + predicado + objeto**
 
-                - El predicado representa la naturaleza de la relación<!-- .element: class="fragment" data-fragment-index="4" -->
-                - Las declaraciones RDF se denominan tripletas<!-- .element: class="fragment" data-fragment-index="5" -->
+                - El predicado representa la naturaleza de la relación
+                - Las declaraciones RDF se denominan tripletas
 
 
                 </script>
@@ -267,22 +267,22 @@
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## IRIs, URIs, URLs
+                ## URI, URI, URL
                 - URI: identifica un recurso físico o abstracto<!-- .element: class="fragment" data-fragment-index="1" -->
                 - IRI: como la URI, pero incorpora UTF-8<!-- .element: class="fragment" data-fragment-index="2" -->
                 - URL: una URI que, además de identificar, proporciona una forma de localizar el recurso a través de su mecanismo de acceso primario<!-- .element: class="fragment" data-fragment-index="3" -->
 
-                http://dbpedia.org/resource/Leonardo_da_Vinci<!-- .element: class="fragment" data-fragment-index="4" -->
+                http://dbpedia.org/resource/Leonardo_da_Vinci<!-- .element: class="fragment" data-fragment-index="3" -->
 
-                **son identificadores únicos (fuertes)**<!-- .element: class="fragment" data-fragment-index="5" -->
+                **son identificadores únicos (fuertes)**<!-- .element: class="fragment" data-fragment-index="4" -->
 
 
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## IRIs, URIs, URLs
-                Es común acortar los URIs asignando un espacio de nombres a su base:
+                ## URI, IRI, URL (II)
+                Es común acortar los URIs asignando un espacio de nombres a su base ([*Cool URIs*](https://www.w3.org/TR/cooluris/)):
 
                 http://www.w3.org/1999/02/22-rdf-syntax-ns#type
 
@@ -296,11 +296,19 @@
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## literales
-                valores básicos que no son IRIs (strings, dates...)<!-- .element: class="fragment" data-fragment-index="1" -->
+                valores básicos que no son IRIs (strings, números, fechas...)
 
-                Muchos <!-- .element: class="fragment" data-fragment-index="2" -->[tipos de datos](https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#section-Datatypes)<!-- .element: class="fragment" data-fragment-index="2" --> provienen de XML Schema<!-- .element: class="fragment" data-fragment-index="2" -->
+                Muchos [tipos de datos](https://www.w3.org/TR/2014/REC-rdf11-concepts-20140225/#section-Datatypes) provienen de XML Schema
 
 
+                </script>
+                </section>
+                
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ## literales (II)
+                
+                ![](./img/xsd-type-hierarchy.gif)<!-- .element width="45%" -->
                 </script>
                 </section>
 
@@ -308,10 +316,10 @@
                 <script type="text/template">
                 ## blank nodes
 
-                - A veces es útil representar un recurso sin usar un identificador.<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Se asemejan a variables en álgebra: representan algo cuyo valor se desconoce.<!-- .element: class="fragment" data-fragment-index="2" -->
-                - Pueden aparecer en las posiciones de sujeto y objeto.<!-- .element: class="fragment" data-fragment-index="3" -->
-                - Se usan para agrupar conjuntos de declaraciones.<!-- .element: class="fragment" data-fragment-index="4" -->
+                - A veces es útil representar un recurso sin usar un identificador.
+                - Se asemejan a variables en álgebra: representan algo cuyo valor se desconoce.
+                - Suelen aparecer en las posiciones de sujeto y objeto.
+                - Se usan para agrupar conjuntos de declaraciones.
 
                 </script>
                 </section>
@@ -340,7 +348,7 @@
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## formatos de serialización
+                ## formatos de serialización (I)
 
                 N-triples:
 
@@ -354,29 +362,37 @@
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## formatos de serialización
+                ## formatos de serialización (II)
 
                 Turtle:
+                
+                    @base <http://example.org/> .
+                    @prefix owl: <http://www.w3.org/2002/07/owl#> .
+                    @prefix foaf: <http://xmlns.com/foaf/0.1/> .
+                    @prefix rel: <http://www.perceive.net/schemas/relationship/> .
 
-                        BASE   <http://example.org/>
-                        PREFIX foaf: <http://xmlns.com/foaf/0.1/>
-                        PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
-                        PREFIX schema: <http://schema.org/>
-                        PREFIX dcterms: <http://purl.org/dc/terms/>
-                        PREFIX wd: <http://www.wikidata.org/entity/>
+                    <#green-goblin>
+                        rel:enemyOf <#spiderman> ;
+                        a foaf:Person ;    # in the context of the Marvel universe
+                        foaf:name "Green Goblin" .
 
-                        <bob#me>
+                    <#spiderman>
+                        rel:enemyOf <#green-goblin> ;
                         a foaf:Person ;
-                        foaf:knows <alice#me> ;
-                        schema:birthDate "1990-07-04"^^xsd:date ;
-                        foaf:topic_interest wd:Q12418 .
+                        foaf:knows [
+                            a foaf:Person;
+                            foaf:name "Mary Jane Watson" .
+                        ] ;
+                        foaf:name "Spiderman", "Человек-паук"@ru .
+                    
+                    _:pp owl:sameAs <#spiderman> .
 
                 </script>
                 </section>
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## formatos de serialización
+                ## formatos de serialización (III)
 
                 blank node:
 
@@ -389,7 +405,7 @@
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## formatos de serialización
+                ## formatos de serialización (IV)
 
                 JSON-LD:
 
@@ -411,7 +427,7 @@
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## formatos de serialización
+                ## formatos de serialización (V)
 
                 JSON-LD context:
 
@@ -446,7 +462,7 @@
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## formatos de serialización
+                ## formatos de serialización (VI)
 
                 RDF/XML:
 
@@ -476,31 +492,30 @@
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## vocabularios
+                ## Vocabularios
 
-                - RDF se utiliza conjuntamente con vocabularios para proporcionar información semántica.<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Para definir vocabularios, RDF proporciona la herramienta básica RDF Schema (RDFs)<!-- .element: class="fragment" data-fragment-index="2" -->
+                - RDF se utiliza conjuntamente con vocabularios para proporcionar información semántica.
+                - Para definir vocabularios, RDF proporciona la herramienta básica RDF Schema (RDFS).
 
                 </script>
                 </section>
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## vocabularios
+                ## Vocabularios (II)
 
-                - Clase: categoría para clasificar recursos.<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Tipo: relación entre instancia y su clase correspondiente.<!-- .element: class="fragment" data-fragment-index="2" -->
-                - Dominio: colección de tipos que usan una propiedad.<!-- .element: class="fragment" data-fragment-index="3" -->
-                - Rango: tipos de valores que puede tomar una propiedad.<!-- .element: class="fragment" data-fragment-index="4" -->
+                - Clase: categoría para clasificar recursos.
+                - Tipo: relación entre instancia y su clase correspondiente.
+                - Dominio: colección de tipos que usan una propiedad.
+                - Rango: tipos de valores que puede tomar una propiedad.
 
-                **un recurso se considera miembro de una clase por sus propiedades**<!-- .element: class="fragment" data-fragment-index="5" -->
-
+                **un recurso se considera miembro de una clase por el rango/dominio de sus propiedades**
 
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## vocabularios
+                ## vocabularios (III)
                 <!-- .slide: style="font-size:30px" -->
 
                 |Construct|Sintaxis|
@@ -520,14 +535,14 @@
                             ## vocabularios comunes
                             <!-- .slide: style="font-size:30px" -->
 
-                            - <!-- .element: class="fragment" data-fragment-index="1" -->Dublin Core [DCT](http://dublincore.org/documents/dcmi-terms/)<!-- .element: class="fragment" data-fragment-index="1" -->
-                            - <!-- .element: class="fragment" data-fragment-index="2" -->Friend of a Friend [FOAF](http://www.foaf-project.org/)<!-- .element: class="fragment" data-fragment-index="2" -->
-                            - <!-- .element: class="fragment" data-fragment-index="3" -->[Schema.org](http://schema.org/)<!-- .element: class="fragment" data-fragment-index="3" -->
-                            - <!-- .element: class="fragment" data-fragment-index="4" -->Data Catalog Vocabulary [DCAT](https://www.w3.org/TR/2014/REC-vocab-dcat-20140116/)<!-- .element: class="fragment" data-fragment-index="4" -->
-                            - <!-- .element: class="fragment" data-fragment-index="5" -->RDF Data Cube vocabulary [QB](https://www.w3.org/TR/2014/REC-vocab-data-cube-20140116/)<!-- .element: class="fragment" data-fragment-index="5" -->
-                            - <!-- .element: class="fragment" data-fragment-index="6" -->The Organization Ontology [ORG](https://www.w3.org/TR/2014/REC-vocab-org-20140116/)<!-- .element: class="fragment" data-fragment-index="6" -->
+                            - Dublin Core [DC](http://purl.org/dc/elements/1.1/) / Dublin Core terms [DCT](http://purl.org/dc/terms/)
+                            - Friend of a Friend [FOAF](http://www.foaf-project.org/)
+                            - [Schema.org](http://schema.org/)
+                            - Data Catalog Vocabulary [DCAT](https://www.w3.org/TR/2014/REC-vocab-dcat-20140116/)
+                            - RDF Data Cube vocabulary [QB](https://www.w3.org/TR/2014/REC-vocab-data-cube-20140116/)
+                            - The Organization Ontology [ORG](https://www.w3.org/TR/2014/REC-vocab-org-20140116/)
 
-                            además de RDFs, OWL, SKOS...<!-- .element: class="fragment" data-fragment-index="7" -->
+                            además de RDFS, OWL, SKOS...
 
                         </script>
                     </section>
@@ -563,32 +578,19 @@
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## Definición
-                Para un filósofo:<!-- .element: class="fragment" data-fragment-index="1" -->
+                ## Definición (I)
+                Para un filósofo:
 
-                ><!-- .element: class="fragment" data-fragment-index="2" -->Un sistema particular de categorías sistematizando cierta visión del mundo [Guarino, 1998]<!-- .element: class="fragment" data-fragment-index="2" -->
+                >Un sistema particular de categorías sistematizando cierta visión del mundo [Guarino, 1998]
 
                 </script>
                 </section>
 <section data-id="1" data-markdown>
 <script type="text/template">
-## Definición
-Para un científico de datos:<!-- .element: class="fragment" data-fragment-index="1" -->
+## Definición (II)
+Para un científico de datos:
 
-><!-- .element: class="fragment" data-fragment-index="2" -->Una especificación formal de una conceptualización compartida [Struder et. al., 1998]<!-- .element: class="fragment" data-fragment-index="2" -->
-
-</script>
-</section>
-
-<section data-id="1" data-markdown>
-<script type="text/template">
-## Componentes
-
-Clases<!-- .element: class="fragment" data-fragment-index="1" -->
-
-- Representan conceptos tomados en su sentido más amplio<!-- .element: class="fragment" data-fragment-index="2" -->
-- Suelen estar organizadas en taxonomías<!-- .element: class="fragment" data-fragment-index="3" -->
-
+>Una especificación formal de una conceptualización compartida [Struder et. al., 1998]
 
 </script>
 </section>
@@ -597,24 +599,10 @@ Clases<!-- .element: class="fragment" data-fragment-index="1" -->
 <script type="text/template">
 ## Componentes
 
-Relaciones<!-- .element: class="fragment" data-fragment-index="1" -->
+Clases
 
-- Representan un tipo de asociación entre los conceptos del dominio<!-- .element: class="fragment" data-fragment-index="2" -->
-- Las contenidas en una ontología normalmente son binarias (dominio - rango)<!-- .element: class="fragment" data-fragment-index="3" -->
-- Se utilizan también para expresar atributos de conceptos (su rango es un tipo de datos y no un concepto)<!-- .element: class="fragment" data-fragment-index="4" -->
-
-
-</script>
-</section>
-<section data-id="1" data-markdown>
-<script type="text/template">
-## Componentes
-
-Axiomas<!-- .element: class="fragment" data-fragment-index="1" -->
-
-- Modelan afirmaciones que son siempre ciertas<!-- .element: class="fragment" data-fragment-index="1" -->
-- Sirven para verificar la consistencia de la ontología o de sus conocimientos almacenados<!-- .element: class="fragment" data-fragment-index="2" -->
-- Son útiles para inferir conocimientos nuevos<!-- .element: class="fragment" data-fragment-index="3" -->
+- Representan conceptos tomados en su sentido más amplio
+- Suelen estar organizadas en taxonomías
 
 
 </script>
@@ -622,11 +610,38 @@ Axiomas<!-- .element: class="fragment" data-fragment-index="1" -->
 
 <section data-id="1" data-markdown>
 <script type="text/template">
-## Componentes
+## Componentes (II)
 
-Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
+Relaciones
 
-- Representan individuos o elementos en una ontología<!-- .element: class="fragment" data-fragment-index="2" -->
+- Representan un tipo de asociación entre los conceptos del dominio
+- Las contenidas en una ontología normalmente son binarias (dominio - rango)
+- Se utilizan también para expresar atributos de conceptos (su rango es un tipo de datos y no un concepto)
+
+
+</script>
+</section>
+<section data-id="1" data-markdown>
+<script type="text/template">
+## Componentes (III)
+
+Axiomas
+
+- Modelan afirmaciones que son siempre ciertas
+- Sirven para verificar la consistencia de la ontología o de sus conocimientos almacenados
+- Son útiles para inferir conocimientos nuevos
+
+
+</script>
+</section>
+
+<section data-id="1" data-markdown>
+<script type="text/template">
+## Componentes (IV)
+
+Instancias
+
+- Representan individuos o elementos en una ontología
 
 </script>
 </section>
@@ -635,10 +650,10 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
 <script type="text/template">
 ## Beneficios
 
-- Proporcionan definiciones comunes y compartidas sobre conceptos de un dominio<!-- .element: class="fragment" data-fragment-index="1" -->
-- Permiten reutilizar conocimientos de un dominio<!-- .element: class="fragment" data-fragment-index="2" -->
-- Proporcionan términos a utilizar al crear documentos RDF<!-- .element: class="fragment" data-fragment-index="3" -->
-- Ofrecen un mecanismo de codificar conocimiento y semántica para ser procesados por máquinas<!-- .element: class="fragment" data-fragment-index="4" -->
+- Proporcionan definiciones comunes y compartidas sobre conceptos de un dominio
+- Permiten reutilizar conocimientos de un dominio
+- Proporcionan términos a utilizar al crear documentos RDF
+- Ofrecen un mecanismo de codificar conocimiento y semántica para ser procesados por máquinas
 
 </script>
 </section>
@@ -649,7 +664,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 <section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ##  RDFs
+                ##  RDFS
 
                 RDF Schema
 
@@ -658,75 +673,76 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## Definición
-                - Lenguaje de esquema básico y ligero<!-- .element: class="fragment" data-fragment-index="1" -->
-                - En su naturaleza, es orientado a objetos<!-- .element: class="fragment" data-fragment-index="2" -->
-                - Declarar tipos es sencillo (frente a las PKs y FKs de una BDR)<!-- .element: class="fragment" data-fragment-index="3" -->
+                - Lenguaje de esquema básico y ligero
+                - En su naturaleza, es orientado a objetos
+                - Declarar tipos es sencillo (frente a las PKs y FKs de una BDR)
 
-                ><!-- .element: class="fragment" data-fragment-index="4" -->su propósito es definir vocabularios compartidos entre aplicaciones para facilitar el intercambio de datos entre ellas<!-- .element: class="fragment" data-fragment-index="4" -->
+                >su propósito es definir vocabularios compartidos entre aplicaciones para facilitar el intercambio de datos entre ellas
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## modelado con RDFs
+                ## modelado con RDFS
 
-                `rdf:type`<!-- .element: class="fragment" data-fragment-index="1" -->
+                `rdf:type`
 
-                - <!-- .element: class="fragment" data-fragment-index="2" --> Permite especificar que un concepto es instancia de una clase<!-- .element: class="fragment" data-fragment-index="2" -->
+                -  Permite especificar que un concepto es instancia de una clase
 
                         ex:miHondaCivic rdf:type ex:Vehiculo
                         ex:miHondaCivic rdf:type ex:ArticuloEnVenta
                         ex:miHomdaCivic rdf:type ex:BienAsegurado
-                <!-- .element: class="fragment" data-fragment-index="3" -->
+                
+                - En Turtle/SPARQL se puede abreviar con `a`:
+                
+                        ex:miHondaCivic a ex:Vehiculo
 
                 </script>
                 </section>
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## modelado con RDFs
+                ## modelado con RDFS (II)
 
-                `rdf:class`<!-- .element: class="fragment" data-fragment-index="1" -->
-
-                `rdfs:property`<!-- .element: class="fragment" data-fragment-index="1" -->
-
-                - <!-- .element: class="fragment" data-fragment-index="2" -->Relacionan clases y propiedades<!-- .element: class="fragment" data-fragment-index="2" -->
-
-                      ex:articuloEnVenta rdf:type rdf:Class
-                      ex:precio rdf:type rdfs:property
-                <!-- .element: class="fragment" data-fragment-index="3" -->
+                - `rdfs:Resource`: Clase de *todo* (En RDF, todo son recursos)
+                    - `rdfs:Class`: Clase RDF
+                    - `rdfs:Literal`: Clase de los literales
+                    - `rdfs:Property`: Clase de las propiedades
+                
+                
+                      ex:articuloEnVenta rdf:type rdfs:Class
+                      ex:precio rdf:type rdfs:Property
 
                 </script>
                 </section>
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## modelado con RDFs
+                ## modelado con RDFS (III)
 
-                `rdfs:domain`<!-- .element: class="fragment" data-fragment-index="1" -->
+                - `rdfs:domain`: Dominio (conceptos a la que esa propiedad aplica)
 
-                `rdfs:range`<!-- .element: class="fragment" data-fragment-index="1" -->
-
-                - <!-- .element: class="fragment" data-fragment-index="2" -->Dominio: conceptos a la que esa propiedad aplica<!-- .element: class="fragment" data-fragment-index="2" -->
-                - <!-- .element: class="fragment" data-fragment-index="3" -->Rango: valores que la propiedad puede aceptar<!-- .element: class="fragment" data-fragment-index="3" -->
+                - `rdfs:range`: Rango (valores que la propiedad puede aceptar)
 
                         ex:precio rdfs:domain rdf:ArticuloEnVenta
-                        ex:precio rdfs:range XSD:int
-                <!-- .element: class="fragment" data-fragment-index="4" -->
+                        ex:precio rdfs:range xsd:integer
+                        
+                ### ¡Inferencia!
+                
 
                 </script>
                 </section>
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## modelado con RDFs
+                ## modelado con RDFS (IV)
 
-                `subClassOf`<!-- .element: class="fragment" data-fragment-index="1" -->
+                `subClassOf`
 
-                - <!-- .element: class="fragment" data-fragment-index="2" -->Las instancias de una subclase lo son de su clase padre<!-- .element: class="fragment" data-fragment-index="2" -->
-                - <!-- .element: class="fragment" data-fragment-index="3" -->Las propiedades de una clase lo son de su clase hija<!-- .element: class="fragment" data-fragment-index="3" -->
+                - Las instancias de una subclase lo son de su clase padre
+                - Las propiedades de una clase lo son de su clase hija (**herencia**)
 
-                        ex:cocheUsado rdfs:subClassOf rdf:ArticuloEnVenta
-                <!-- .element: class="fragment" data-fragment-index="4" -->
+                        ex:Coche rdfs:subClassOf ex:Vehiculo
+                
 
 
                 </script>
@@ -734,14 +750,14 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## modelado con RDFs
+                ## modelado con RDFS (V)
 
-                `subPropertyOf`<!-- .element: class="fragment" data-fragment-index="1" -->
+                `subPropertyOf`
 
-                - <!-- .element: class="fragment" data-fragment-index="2" -->Propiedades incluidas en otra propiedad más general<!-- .element: class="fragment" data-fragment-index="2" -->
+                - Propiedades incluidas en otra propiedad más general
 
                         ex:tieneMadre rdfs:subPropertyOf rdf:tieneProgenitor
-                <!-- .element: class="fragment" data-fragment-index="3" -->
+                
 
 
                 </script>
@@ -749,14 +765,12 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## modelado con RDFs
+                ## modelado con RDFS (VI)
 
-                otros constructs<!-- .element: class="fragment" data-fragment-index="1" -->
-
-                - <!-- .element: class="fragment" data-fragment-index="2" -->`rdfs:Label`:<!-- .element: class="fragment" data-fragment-index="2" --> texto descriptivo del recurso<!-- .element: class="fragment" data-fragment-index="2" -->
-                - <!-- .element: class="fragment" data-fragment-index="3" -->`rdfs:Comment`: comentario más extenso sobre el recurso<!-- .element: class="fragment" data-fragment-index="3" -->
-                - <!-- .element: class="fragment" data-fragment-index="4" -->`rdfs:SeeAlso`: enlaces a otras fuentes relevantes<!-- .element: class="fragment" data-fragment-index="4" -->
-                - <!-- .element: class="fragment" data-fragment-index="5" -->`rdfs:Literal`: tipo de dato primitivo<!-- .element: class="fragment" data-fragment-index="5" -->
+                - `rdfs:label`: texto descriptivo del recurso
+                - `rdfs:comment`: comentario más extenso sobre el recurso
+                - `rdfs:seeAlso`: enlaces a otras fuentes relevantes
+                - `rdfs:isDefinedBy`: relación del recurso con documento u ontología que lo define
 
                 </script>
                 </section>
@@ -765,7 +779,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                         <script type="text/template">
                                 ### ejercicio
                                 <!-- .slide: style="font-size:30px" -->
-                                Expresar el siguiente conocimiento en RDF y RDFs. Utilizar un espacio de nombres 'ex' para la ontología creada. Usar N-Triples como formato de serialización.
+                                Expresar el siguiente conocimiento en RDF y RDFS. Utilizar un espacio de nombres 'ex' para la ontología creada, y Turtle como formato de serialización. 
                 
                                 - El Curry Tailandés es un plato tailandés basado en leche de coco.
                                 - Pedro es alérgico a las nueces. 
@@ -792,9 +806,9 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 <script type="text/template">
                 ##  OWL
 
-                - Uno de los estándares principales de la web semántica<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Permite un modelado rápido y flexible<!-- .element: class="fragment" data-fragment-index="2" -->
-                - Base para un razonamiento automático eficiente<!-- .element: class="fragment" data-fragment-index="3" -->
+                - Uno de los estándares principales de la web semántica
+                - Permite un modelado rápido y flexible
+                - Base para un razonamiento automático eficiente
 
 
                 </script>
@@ -803,18 +817,18 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 <script type="text/template">
                 ##  OWL: características
 
-                - Más expresivo que otros lenguajes de modelado<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Flexible: modelado incremental<!-- .element: class="fragment" data-fragment-index="2" -->
-                - Eficiente: permite soportar varios tipos de tareas de razonamiento<!-- .element: class="fragment" data-fragment-index="3" -->
+                - Más expresivo que otros lenguajes de modelado
+                - Flexible: modelado incremental
+                - Eficiente: permite soportar varios tipos de tareas de razonamiento
 
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ##  OWL: diferencias con RDFs
+                ##  OWL: diferencias con RDFS
                 vocabulario
 
-                - OWL incluye RDFs y ofrece mucho más
+                - OWL incluye RDFS y ofrece mucho más
 
                         ex:Madre           owl:unionOf        (ex:Progenitor, ex:Mujer)
                         IFCA:JohnSmith     owl:sameAs         PersonalDatabase:JohnQSmith
@@ -825,32 +839,32 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ##  OWL: diferencias con RDFs
+                ##  OWL: diferencias con RDFS (II)
 
-                **flexibilidad**<!-- .element: class="fragment" data-fragment-index="1" -->
+                **flexibilidad**
 
-                - OWL permite especificar cómo usar un vocabulario y cómo no usarlo<!-- .element: class="fragment" data-fragment-index="2" -->
-                - OWL permite restringir los modelos de datos para permitir consultas más rápidas<!-- .element: class="fragment" data-fragment-index="3" -->
+                - OWL permite especificar cómo usar un vocabulario y cómo no usarlo
+                - OWL permite restringir los modelos de datos para permitir consultas más rápidas
 
-                ><!-- .element: class="fragment" data-fragment-index="4" -->En RDFs un recurso puede definirse como clase e instancia simultáneamente. OWL no lo permite.<!-- .element: class="fragment" data-fragment-index="4" -->
+                >En RDFS un recurso puede definirse como clase e instancia simultáneamente. OWL no lo permite.
 
                 </script>
                 </section>
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ##  OWL: diferencias con RDFs
-                **anotaciones**<!-- .element: class="fragment" data-fragment-index="1" -->
+                ##  OWL: diferencias con RDFS (III)
+                **anotaciones**
 
-                **meta-metadatos**<!-- .element: class="fragment" data-fragment-index="1" -->
+                **meta-metadatos**
 
-                -<!-- .element: class="fragment" data-fragment-index="2" --> OWL ofrece anotaciones para enlazar modelos de datos<!-- .element: class="fragment" data-fragment-index="2" -->
+                - OWL ofrece anotaciones para enlazar modelos de datos
 
                         owl:Import
                         owl:versionInfo
                         owl:backwardsCompatibleWith
                         owl:deprecatedProperty
-                <!-- .element: class="fragment" data-fragment-index="3" -->
+                
 
                 </script>
                 </section>
@@ -858,8 +872,8 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 <script type="text/template">
                 ##  perfiles de OWL
 
-                - Existen para permitir un trade-off entre expresividad en el modelado y requisitos computacionales en el razonamiento automático<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Si no se está usando OWL para razonamiento automático, se puede usar el perfil más expresivo (<!-- .element: class="fragment" data-fragment-index="2" -->`OWL 2 / Full`<!-- .element: class="fragment" data-fragment-index="2" -->)<!-- .element: class="fragment" data-fragment-index="2" -->
+                - Existen para permitir un trade-off entre expresividad en el modelado y requisitos computacionales en el razonamiento automático
+                - Si no se está usando OWL para razonamiento automático, se puede usar el perfil más expresivo (`OWL 2 / Full`)
 
                 </script>
                 </section>
@@ -868,8 +882,8 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 <script type="text/template">
                 ##  perfiles de OWL: OWL 2 / Full
 
-                - El perfil más expresivo, permite usar todos los constructs disponibles<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Las reglas de inferencia pueden ser tan complejas que disparen el coste computacional (tiempo)<!-- .element: class="fragment" data-fragment-index="2" -->
+                - El perfil más expresivo, permite usar todos los constructs disponibles
+                - Las reglas de inferencia pueden ser tan complejas que disparen el coste computacional (tiempo)
 
                 </script>
                 </section>
@@ -877,8 +891,8 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 <script type="text/template">
                 ##  perfiles de OWL: OWL 2 / EL
 
-                - Útil si se tienen muchas clases y propiedades enlazadas a través de relaciones complejas y se desea que el razonador descubra nuevas relaciones<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Dichas relaciones entre clases pueden inferirse en tiempo polinomial<!-- .element: class="fragment" data-fragment-index="2" -->
+                - Útil si se tienen muchas clases y propiedades enlazadas a través de relaciones complejas y se desea que el razonador descubra nuevas relaciones
+                - Dichas relaciones entre clases pueden inferirse en tiempo polinomial
 
                 </script>
                 </section>
@@ -886,8 +900,8 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 <script type="text/template">
                 ##  perfiles de OWL: OWL 2 / QL
 
-                - Orientado hacia un procesamiento eficiente de muchos datos de tipo instancia (por ejemplo, provenientes de una BDR)<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Está lo suficientemente limitado para poder reescribir una consulta en SQL<!-- .element: class="fragment" data-fragment-index="2" -->
+                - Orientado hacia un procesamiento eficiente de muchos datos de tipo instancia (por ejemplo, provenientes de una BDR)
+                - Está lo suficientemente limitado para poder reescribir una consulta en SQL
 
                 </script>
                 </section>
@@ -896,36 +910,36 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 <script type="text/template">
                 ##  perfiles de OWL: OWL 2 / RL
 
-                - Orientado hacia la ejecución eficiente en un motor de reglas de negocio<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Funciona mejor con datos en RDF y reglas que podrían implementar cualquier lógica de negocio arbitraria<!-- .element: class="fragment" data-fragment-index="2" -->
+                - Orientado hacia la ejecución eficiente en un motor de reglas de negocio
+                - Funciona mejor con datos en RDF y reglas que podrían implementar cualquier lógica de negocio arbitraria
 
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ##  OWL: clases
-                - Una colección de individuos<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Una forma de describir parte del mundo<!-- .element: class="fragment" data-fragment-index="2" -->
-                - Ej: persona, animal, dispositivo<!-- .element: class="fragment" data-fragment-index="3" -->
+                - Una colección de individuos
+                - Una forma de describir parte del mundo
+                - Ej: persona, animal, dispositivo
                 </script>
                 </section>
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ##  OWL: propiedades
-                - Una colección de relaciones entre individuos<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Una forma de describir un tipo de relación entre individuos<!-- .element: class="fragment" data-fragment-index="2" -->
-                - Ej: tienePadre, tieneAnimal, cumpleAños<!-- .element: class="fragment" data-fragment-index="3" -->
+                - Una colección de relaciones entre individuos
+                - Una forma de describir un tipo de relación entre individuos
+                - Ej: tienePadre, tieneAnimal, cumpleAños
                 </script>
                 </section>
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ##  OWL: individuos
-                - Objetos en el mundo<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Pertenecen a clases<!-- .element: class="fragment" data-fragment-index="2" -->
-                - Se relacionan con otros objetos y con valores de datos a través de propiedades<!-- .element: class="fragment" data-fragment-index="3" -->
-                - Ej: Miguel, AyuntamientoDeSantander, IFCA<!-- .element: class="fragment" data-fragment-index="4" -->
+                - Objetos en el mundo
+                - Pertenecen a clases
+                - Se relacionan con otros objetos y con valores de datos a través de propiedades
+                - Ej: Miguel, AyuntamientoDeSantander, IFCA
                 </script>
                 </section>
 
@@ -933,285 +947,287 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ##  OWL: clases y recursos
-                `intersectionOf`<!-- .element: class="fragment" data-fragment-index="1" -->
+                `intersectionOf`
 
-                -<!-- .element: class="fragment" data-fragment-index="2" --> Cualquier instancia de la primera clase lo es también de las especificadas en la lista<!-- .element: class="fragment" data-fragment-index="2" -->
+                - Cualquier instancia de la primera **clase** lo es también de las especificadas en la lista
 
                         ex:Madre     owl:intersectionOf    (ex:Mujer, ex:Progenitor)
-                <!-- .element: class="fragment" data-fragment-index="3" -->
+                
                 </script>
                 </section>
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ##  OWL: clases y recursos
-                `unionOf`<!-- .element: class="fragment" data-fragment-index="1" -->
+                ##  OWL: clases y recursos (II)
+                `unionOf`
 
-                -<!-- .element: class="fragment" data-fragment-index="2" --> Cualquier instancia de la primera clase lo es también de <!-- .element: class="fragment" data-fragment-index="2" -->**al menos una** <!-- .element: class="fragment" data-fragment-index="2" -->especificadas en la lista<!-- .element: class="fragment" data-fragment-index="2" -->
+                - Cualquier instancia de la primera **clase** lo es también de **al menos una** especificadas en la lista
 
                         ex:Progenitor     owl:unionOf    (:Madre, :Padre)
-                <!-- .element: class="fragment" data-fragment-index="3" -->
+                
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ##  OWL: clases y recursos
-                `complementOf`<!-- .element: class="fragment" data-fragment-index="1" -->
+                ##  OWL: clases y recursos (III)
+                `complementOf`
 
-                -<!-- .element: class="fragment" data-fragment-index="2" --> La primera clase es equivalente a todo lo que no esté en la segunda<!-- .element: class="fragment" data-fragment-index="2" -->
+                - La primera **clase** es equivalente a todo lo que no esté en la segunda
 
-                        ex:Progenitor     owl:complementOf    ex:NoProgenitor
-                <!-- .element: class="fragment" data-fragment-index="3" -->
+                        ex:Contable     owl:complementOf    ex:Incontable
+                
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ##  OWL: clases y recursos
-                `disjointWith`<!-- .element: class="fragment" data-fragment-index="1" -->
+                ##  OWL: clases y recursos (IV)
+                `disjointWith`
 
-                - <!-- .element: class="fragment" data-fragment-index="2" -->La primera clase y la segunda no tienen miembros en común<!-- .element: class="fragment" data-fragment-index="2" -->
+                - La primera **clase** y la segunda no tienen miembros en común
 
                         ex:Hombre     owl:disjointWith    ex:Mujer
-                <!-- .element: class="fragment" data-fragment-index="3" -->
+                
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ##  OWL: clases y recursos
-                `equivalentClass`<!-- .element: class="fragment" data-fragment-index="1" -->
+                ##  OWL: clases y recursos (V)
+                `equivalentClass`
 
-                -<!-- .element: class="fragment" data-fragment-index="2" --> La primera clase y la segunda contienen los mismos miembros<!-- .element: class="fragment" data-fragment-index="2" -->
+                - La primera **clase** y la segunda contienen los mismos miembros
 
                         ex:HumanoHembraAdulto     owl:equivalentClass    ex:Mujer
-                <!-- .element: class="fragment" data-fragment-index="3" -->
+                
 
-                ¡No implica igualdad de clases! (no denotan los mismos conceptos)<!-- .element: class="fragment" data-fragment-index="4" -->
+                ¡No implica igualdad de clases! (no denotan los mismos conceptos)
                 </script>
                 </section>
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ##  OWL: clases y recursos
-                `sameAs`<!-- .element: class="fragment" data-fragment-index="1" -->
+                ##  OWL: clases y recursos (VI)
+                `sameAs`
 
-                -<!-- .element: class="fragment" data-fragment-index="2" --> El primer recurso se refiere exactamente al mismo que el segundo<!-- .element: class="fragment" data-fragment-index="2" -->
+                - El primer **recurso** se refiere exactamente al mismo que el segundo
 
                         ex:Spiderman     owl:sameAs    ex:PeterParker
-                <!-- .element: class="fragment" data-fragment-index="3" -->
+                
 
-                Enlaza a dos individuos <!-- .element: class="fragment" data-fragment-index="4" -->
+                Enlaza a dos individuos 
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ##  OWL: clases y recursos
-                `differentFrom`<!-- .element: class="fragment" data-fragment-index="1" -->
+                ##  OWL: clases y recursos (VII)
+                `differentFrom`
 
-                - <!-- .element: class="fragment" data-fragment-index="2" -->El primer recurso se refiere a uno distinto del segundo<!-- .element: class="fragment" data-fragment-index="2" -->
+                - El primer **recurso** se refiere a uno distinto del segundo
 
-                        ex:AnaPastorMinistra    owl:differentFrom    ex:AnaPastorPeriodista
-                <!-- .element: class="fragment" data-fragment-index="3" -->
-                </script>
-                </section>
-
-                <section data-id="1" data-markdown>
-                <script type="text/template">
-                ##  OWL: propiedades
-                `DatatypeProperty`<!-- .element: class="fragment" data-fragment-index="1" -->
-
-                - La propiedad enlaza a valores de datos simples<!-- .element: class="fragment" data-fragment-index="2" -->
-
-                `ex:cumpleAños`<!-- .element: class="fragment" data-fragment-index="3" -->
-
-                enlaza a una fecha <!-- .element: class="fragment" data-fragment-index="4" -->
-
-                </script>
-                </section>
-                <section data-id="1" data-markdown>
-                <script type="text/template">
-                ##  OWL: propiedades
-                `ObjectProperty` <!-- .element: class="fragment" data-fragment-index="1" -->
-
-                - La propiedad enlaza a otro recurso <!-- .element: class="fragment" data-fragment-index="2" -->
-
-                `ex:tieneConyuge`<!-- .element: class="fragment" data-fragment-index="3" -->
-
-                enlaza a una persona (otro recurso)<!-- .element: class="fragment" data-fragment-index="4" -->
-                </script>
-                </section>
-                <section data-id="1" data-markdown>
-                <script type="text/template">
-                ##  OWL: propiedades
-                `TransitiveProperty` <!-- .element: class="fragment" data-fragment-index="1" -->
-
-                - <!-- .element: class="fragment" data-fragment-index="2" -->Si la propiedad enlaza A con B y B con C, también enlaza A con C <!-- .element: class="fragment" data-fragment-index="2" -->
-
-                        ex:tieneAncestro
-                <!-- .element: class="fragment" data-fragment-index="3" -->
-                </script>
-                </section>
-                <section data-id="1" data-markdown>
-                <script type="text/template">
-                ##  OWL: propiedades
-                `SymmetricProperty`<!-- .element: class="fragment" data-fragment-index="1" -->
-
-                - <!-- .element: class="fragment" data-fragment-index="2" -->Si la propiedad relaciona A con B, también B con A<!-- .element: class="fragment" data-fragment-index="2" -->
-
-                        ex:tieneConyuge
-                <!-- .element: class="fragment" data-fragment-index="3" -->
-                </script>
-                </section>
-                <section data-id="1" data-markdown>
-                <script type="text/template">
-                ##  OWL: propiedades
-                `AsymmetricProperty`<!-- .element: class="fragment" data-fragment-index="1" -->
-
-                - <!-- .element: class="fragment" data-fragment-index="2" -->Si la propiedad relaciona A con B, nunca relaciona B con A<!-- .element: class="fragment" data-fragment-index="2" -->
-
-                        ex:tieneHijo
-                <!-- .element: class="fragment" data-fragment-index="3" -->
-                </script>
-                </section>
-                <section data-id="1" data-markdown>
-                <script type="text/template">
-                ##  OWL: propiedades
-                `ReflexiveProperty`<!-- .element: class="fragment" data-fragment-index="1" -->
-
-                - <!-- .element: class="fragment" data-fragment-index="2" -->La propiedad enlaza algo consigo mismo<!-- .element: class="fragment" data-fragment-index="2" -->
-
-                        ex:viveCon
-                <!-- .element: class="fragment" data-fragment-index="3" -->
-                </script>
-                </section>
-                <section data-id="1" data-markdown>
-                <script type="text/template">
-                ##  OWL: propiedades
-                `IrreflexiveProperty`<!-- .element: class="fragment" data-fragment-index="1" -->
-
-                - <!-- .element: class="fragment" data-fragment-index="2" -->La propiedad nunca enlaza algo consigo mismo<!-- .element: class="fragment" data-fragment-index="2" -->
-
-                        ex:tieneConyuge
-                <!-- .element: class="fragment" data-fragment-index="3" -->
-                </script>
-                </section>
-                <section data-id="1" data-markdown>
-                <script type="text/template">
-                ##  OWL: propiedades
-                `FunctionalProperty`<!-- .element: class="fragment" data-fragment-index="1" -->
-
-                - <!-- .element: class="fragment" data-fragment-index="2" -->La propiedad solo enlaza como mucho con un recurso<!-- .element: class="fragment" data-fragment-index="2" -->
-
-                        ex:cumpleAños
-                <!-- .element: class="fragment" data-fragment-index="3" -->
-                </script>
-                </section>
-                <section data-id="1" data-markdown>
-                <script type="text/template">
-                ##  OWL: propiedades
-                `InverseFunctionalProperty`<!-- .element: class="fragment" data-fragment-index="1" -->
-
-                - <!-- .element: class="fragment" data-fragment-index="2" -->El sujeto de esta propiedad se identifica unívocamente por el valor de la misma<!-- .element: class="fragment" data-fragment-index="2" -->
-
-                        ex:tieneDNI
-                <!-- .element: class="fragment" data-fragment-index="3" -->
+                        ex:AnaPastorMinistra owl:differentFrom ex:AnaPastorPeriodista
+                
                 </script>
                 </section>
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ##  OWL: propiedades
-                `InverseOf`<!-- .element: class="fragment" data-fragment-index="1" -->
+                `DatatypeProperty`
 
-                - <!-- .element: class="fragment" data-fragment-index="2" -->Las dos propiedades son inversas la una de la otra<!-- .element: class="fragment" data-fragment-index="2" -->
+                - La propiedad enlaza a valores de datos simples
+
+                        ex:cumpleaños a owl:DatatypeProperty
+
+                </script>
+                </section>
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ##  OWL: propiedades (II)
+                `ObjectProperty` 
+
+                - La propiedad enlaza a otro recurso 
+
+                        ex:tieneConyuge a owl:ObjectProperty
+
+                enlaza a una persona (otro recurso)
+                </script>
+                </section>
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ##  OWL: propiedades (III)
+                `TransitiveProperty` 
+
+                - Si la propiedad enlaza A con B y B con C, también enlaza A con C 
+
+                        ex:tieneAncestro a owl:TransitiveProperty
+                
+                </script>
+                </section>
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ##  OWL: propiedades (IV)
+                `SymmetricProperty`
+
+                - Si la propiedad relaciona A con B, también B con A
+
+                        ex:tieneConyuge a owl:SymmetricProperty
+                
+                </script>
+                </section>
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ##  OWL: propiedades (V)
+                `AsymmetricProperty`
+
+                - Si la propiedad relaciona A con B, nunca relaciona B con A
+
+                        ex:tieneHijo a owl:AsymmetricProperty
+                
+                </script>
+                </section>
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ##  OWL: propiedades (VI)
+                `ReflexiveProperty`
+
+                - La propiedad enlaza algo consigo mismo
+
+                        ex:conoceA a owl:ReflexiveProperty
+                
+                </script>
+                </section>
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ##  OWL: propiedades (VII)
+                `IrreflexiveProperty`
+
+                - La propiedad nunca enlaza algo consigo mismo
+
+                        ex:tieneConyuge a owl:IrreflexiveProperty
+                
+                </script>
+                </section>
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ##  OWL: propiedades (VIII)
+                `FunctionalProperty`
+
+                - La propiedad solo enlaza como mucho con un recurso
+
+                        ex:cumpleAños a owl:FunctionalProperty
+                
+                </script>
+                </section>
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ##  OWL: propiedades (IX)
+                `InverseFunctionalProperty`
+
+                - El sujeto de esta propiedad se identifica unívocamente por el valor de la misma
+
+                        ex:tieneDNI a owl:InverseFunctionalProperty
+                
+                </script>
+                </section>
+
+                <section data-id="1" data-markdown>
+                <script type="text/template">
+                ##  OWL: propiedades (X)
+                `InverseOf`
+
+                - Las dos propiedades son inversas la una de la otra
 
                        ex:tieneHijo    owl:InverseOf    ex:tieneProgenitor
-                <!-- .element: class="fragment" data-fragment-index="3" -->
+                
                 </script>
                 </section>
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ##  OWL: propiedades
-                `equivalentProperty`<!-- .element: class="fragment" data-fragment-index="1" -->
+                ##  OWL: propiedades (DLVII)
+                `equivalentProperty`
 
-                - <!-- .element: class="fragment" data-fragment-index="2" -->Las dos propiedades son exactamente las mismas, aunque tengan distinta intencionalidad<!-- .element: class="fragment" data-fragment-index="2" -->
+                - Las dos propiedades son exactamente las mismas, aunque tengan distinta intencionalidad
 
-                        ex:fechaNacimiento    owl:equivalentProperty   ex:cumpleAños
-                <!-- .element: class="fragment" data-fragment-index="3" -->
+                        ex:fechaNacimiento    owl:equivalentProperty   ex:cumpleaños
+                
                 </script>
                 </section>
                 <section data-id="1" data-markdown style="font-size:30px;">
                 <script type="text/template">
                 ##  OWL: restricciones
-                ><!-- .element: class="fragment" data-fragment-index="1" -->Una restricción es una clase que se define por una descripción de sus miembros en términos de propiedades existentes y clases.<!-- .element: class="fragment" data-fragment-index="1" -->
-                `owl:onProperty`<!-- .element: class="fragment" data-fragment-index="1" --> especifica qué propiedad se va a usar en la definición de la clase restricción<!-- .element: class="fragment" data-fragment-index="1" -->
+                >Una restricción es una clase que se define por una descripción de sus miembros en términos de propiedades existentes y clases.
+                `owl:onProperty` especifica qué propiedad se va a usar en la definición de la clase restricción
 
-                Se usa la notación [...] para referirse a un nodo anónimo que será sujeto de todas las tripletas (una por línea, separadas por ;)<!-- .element: class="fragment" data-fragment-index="2" -->
+                Se usa la notación `[...]` para referirse a un nodo anónimo que será sujeto de todas las tripletas (una por línea, separadas por ;)
                 </script>
                 </section>
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ##  OWL: restricciones
-                `cardinality, min-cardinality, max-cardinality`<!-- .element: class="fragment" data-fragment-index="1" -->
+                ##  OWL: restricciones (II)
+                `cardinality, min‑cardinality, max‑cardinality`
 
-                - <!-- .element: class="fragment" data-fragment-index="2" -->La propiedad puede tener un determinado número de valores<!-- .element: class="fragment" data-fragment-index="2" -->
+                - La propiedad puede tener un determinado número de valores
 
-                        ex:Coche   owl:equivalentClass
-                        [  rdf:type owl:Restriction;
+                        ex:Coche owl:equivalentClass [
+                           rdf:type owl:Restriction;
                            owl:onProperty  ex:tieneRueda;
-                           owl:cardinality "4"^^xsd:int].
-                <!-- .element: class="fragment" data-fragment-index="3" -->
+                           owl:cardinality "4"^^xsd:int
+                        ] .
+                
 
-                *Todos aquellos individuos que tienen 4 ruedas*<!-- .element: class="fragment" data-fragment-index="4" -->
+                *Todos aquellos individuos que tienen 4 ruedas*
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ##  OWL: restricciones
-                `hasValue`<!-- .element: class="fragment" data-fragment-index="1" -->
+                `hasValue`
 
-                -<!-- .element: class="fragment" data-fragment-index="2" -->Todos los objetos de la propiedad tienen el valor especificado<!-- .element: class="fragment" data-fragment-index="2" -->
+                - Todos los objetos de la propiedad tienen el valor especificado
 
-                        ex:HijosDePepe   owl:equivalentClass
-                        [  rdf:type owl:Restriction;
-                           owl:onProperty  ex:tienePadre;
-                           owl:hasValue  ex:Pepe].
-                <!-- .element: class="fragment" data-fragment-index="3" -->
+                        ex:HijoDePepe owl:equivalentClass [
+                           rdf:type owl:Restriction;
+                           owl:onProperty ex:tienePadre;
+                           owl:hasValue ex:Pepe
+                        ].
+                
 
-                *Todos aquellos individuos que tienen de padre a Pepe*<!-- .element: class="fragment" data-fragment-index="4" -->
+                *Todos aquellos individuos que tienen de padre a Pepe*
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ##  OWL: restricciones
-                `someValuesFrom`<!-- .element: class="fragment" data-fragment-index="1" -->
+                `someValuesFrom`
 
-                - <!-- .element: class="fragment" data-fragment-index="2" -->Al menos un objeto de esa propiedad es miembro de la clase especificada<!-- .element: class="fragment" data-fragment-index="2" -->
+                - Al menos un objeto de esa propiedad es miembro de la clase especificada
 
-                        ex:Padre   owl:equivalentClass
-                        [  rdf:type owl:Restriction;
-                           owl:onProperty  ex:tieneHijo;
-                           owl:someValuesFrom  ex:Person].
-                <!-- .element: class="fragment" data-fragment-index="3" -->
+                        ex:Padre owl:equivalentClass [
+                           rdf:type owl:Restriction;
+                           owl:onProperty ex:tieneHijo;
+                           owl:someValuesFrom ex:Person
+                        ].
+                
 
-                *Cualquier instancia de la clase Padre tiene al menos un hijo, que es instancia de la clase Persona*<!-- .element: class="fragment" data-fragment-index="4" -->
+                *Cualquier instancia de la clase Padre tiene al menos un hijo, que es instancia de la clase Persona*
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ##  OWL: restricciones
-                `allValuesFrom`<!-- .element: class="fragment" data-fragment-index="1" -->
+                `allValuesFrom`
 
-                - <!-- .element: class="fragment" data-fragment-index="2" -->Todos los objetos de esa propiedad son miembros de la clase especificada<!-- .element: class="fragment" data-fragment-index="2" -->
+                - Todos los objetos de esa propiedad son miembros de la clase especificada
 
-                        ex:Vegetariano   owl:equivalentClass
-                          [  rdf:type owl:Restriction;
+                        ex:Carnívoro owl:equivalentClass [
+                             rdf:type owl:Restriction;
                              owl:onProperty  ex:come;
-                             owl:allValuesFrom  ex:NoCarne].
-                <!-- .element: class="fragment" data-fragment-index="3" -->
+                             owl:allValuesFrom  ex:Carne
+                        ].
+                
 
-                *La clase Vegetariano equivale a la clase de todos los individuos que comen "no carne".*<!-- .element: class="fragment" data-fragment-index="4" -->
+                *La clase Carnívoro equivale a la clase de todos los individuos que comen "carne".*
                 </script>
                 </section>
 
@@ -1230,104 +1246,103 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 ## KOS: introducción
                 <!-- .slide: style="font-size:30px" -->
 
-                ¿Qué es un KOS?<!-- .element: class="fragment" data-fragment-index="1" -->
+                ¿Qué es un KOS?
 
-                > <!-- .element: class="fragment" data-fragment-index="2" -->Un conjunto de elementos, controlados y estructurados, que pueden utilizarse para describir e indexar objetos, navegar por colecciones, etc. Se utilizan comúnmente en bibliotecas, museos y otras áreas.<!-- .element: class="fragment" data-fragment-index="2" -->
+                > Un conjunto de elementos, controlados y estructurados, que pueden utilizarse para describir e indexar objetos, navegar por colecciones, etc. Se utilizan comúnmente en bibliotecas, museos y otras áreas.
 
-                SKOS nace para permitir crear organizaciones de conocimiento modulares que puedan ser reutilizadas y referenciadas en la Web.<!-- .element: class="fragment" data-fragment-index="3" -->
+                SKOS nace para permitir crear organizaciones de conocimiento modulares que puedan ser reutilizadas y referenciadas en la Web.
 
                 </script>
                 </section>
 
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## KOS: introducción
+                ## KOS: introducción (II)
 
-                Tipos de KOS<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Taxonomía: la ciencia de la clasificación. Basada en relaciones jerárquicas.<!-- .element: class="fragment" data-fragment-index="2" -->
-                - Tesauro: extensión de una taxonomía. Añade la capacidad de hacer otras declaraciones sobre los sujetos clasificados (ej: significado, definiciones).<!-- .element: class="fragment" data-fragment-index="3" -->
+                Tipos de KOS
+                - Taxonomía: la ciencia de la clasificación. Basada en relaciones jerárquicas.
+                - Tesauro: extensión de una taxonomía. Añade la capacidad de hacer otras declaraciones sobre los sujetos clasificados (ej: significado, definiciones).
 
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## KOS: introducción
+                ## KOS: introducción (III)
 
-                Utilidad<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Mayor robustez en las búsquedas (términos relacionados)<!-- .element: class="fragment" data-fragment-index="2" -->
-                - Ayudan a construir mejores interfaces de navegación<!-- .element: class="fragment" data-fragment-index="3" -->
-                - Permiten organizar formalmente el conocimiento de un dominio<!-- .element: class="fragment" data-fragment-index="4" -->
+                Utilidad
+                - Mayor robustez en las búsquedas (términos relacionados)
+                - Ayudan a construir mejores interfaces de navegación
+                - Permiten organizar formalmente el conocimiento de un dominio
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## KOS vs ontologías
-                - los KOS se usan para organizar conocimiento, las ontologías para representarlo.<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Los KOS son semánticamente mucho menos rigurosos que las ontologías.<!-- .element: class="fragment" data-fragment-index="2" -->
+                - los KOS se usan para organizar conocimiento, las ontologías para representarlo.
+                - Los KOS son semánticamente mucho menos rigurosos que las ontologías.
 
-                ><!-- .element: class="fragment" data-fragment-index="3" -->Llevando los KOS a la Web Semántica se consigue hacer estos esquemas legibles por máquinas, promover la reutilización y potenciar la interoperabilidad<!-- .element: class="fragment" data-fragment-index="3" -->
+                >Llevando los KOS a la Web Semántica se consigue hacer estos esquemas legibles por máquinas, promover la reutilización y potenciar la interoperabilidad
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## SKOS
-                vocabulario RDF para representar KOS (taxonomías, tesauros, esquemas de clasificación y listas de encabezados de materia).<!-- .element: class="fragment" data-fragment-index="1" -->
+                vocabulario RDF para representar KOS (taxonomías, tesauros, esquemas de clasificación y listas de encabezados de materia).
 
                         @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-                <!-- .element: class="fragment" data-fragment-index="2" -->
+                
 
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## SKOS: conceptos
-                `skos:Concept`<!-- .element: class="fragment" data-fragment-index="1" -->
+                `skos:Concept`
 
-                elemento fundamental del vocabulario SKOS.<!-- .element: class="fragment" data-fragment-index="1" -->
+                elemento fundamental del vocabulario SKOS.
 
-                ><!-- .element: class="fragment" data-fragment-index="2" -->Los conceptos son unidades de pensamiento, ideas o significados que subyacen en los sistemas de organización del conocimiento<!-- .element: class="fragment" data-fragment-index="2" -->
+                >Los conceptos son unidades de pensamiento, ideas o significados que subyacen en los sistemas de organización del conocimiento
 
                         ex:Animal   rdf:type    skos:Concept
-                <!-- .element: class="fragment" data-fragment-index="3" -->
 
-                **previamente deben representarse con URIs**<!-- .element: class="fragment" data-fragment-index="4" -->
+                **¡Emplear URI!**
 
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## SKOS: etiquetas
-                - Los conceptos se pueden caracterizar mediante etiquetas<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Todas son subpropiedades de <!-- .element: class="fragment" data-fragment-index="2" -->`rdfs:label`<!-- .element: class="fragment" data-fragment-index="2" -->
-                - Se usan para asociar un concepto SKOS con un literal RDF en un idioma determinado<!-- .element: class="fragment" data-fragment-index="3" -->
+                - Los conceptos se pueden caracterizar mediante etiquetas
+                - Todas son subpropiedades de `rdfs:label`
+                - Se usan para asociar un concepto SKOS con un literal RDF en un idioma determinado
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## SKOS: etiquetas
-                `skos:prefLabel`<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Permite asignar una etiqueta léxica preferida a un recurso.<!-- .element: class="fragment" data-fragment-index="2" -->
-                - Debería contener términos usados como descriptores en sistemas de indexación<!-- .element: class="fragment" data-fragment-index="3" -->
-                - Se recomienda asignar etiquetas preferidas únicas<!-- .element: class="fragment" data-fragment-index="4" -->
+                ## SKOS: etiquetas (II)
+                `skos:prefLabel`
+                - Permite asignar una etiqueta léxica preferida a un recurso.
+                - Debería contener términos usados como descriptores en sistemas de indexación
+                - Se recomienda asignar etiquetas preferidas únicas
                         ex:Animal
                           rdf:type          skos:Concept;
                           skos:prefLabel    "animal"@es.
-                <!-- .element: class="fragment" data-fragment-index="5" -->
+                
 
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## SKOS: etiquetas
-                `skos:altLabel`<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Permite asignar una etiqueta léxica alternativa a un recurso.<!-- .element: class="fragment" data-fragment-index="2" -->
-                - <!-- .element: class="fragment" data-fragment-index="3" -->Se utiliza para representar sinónimos, abreviaturas, acrónimos...<!-- .element: class="fragment" data-fragment-index="3" -->
+                `skos:altLabel`
+                - Permite asignar una etiqueta léxica alternativa a un recurso.
+                - Se utiliza para representar sinónimos, abreviaturas, acrónimos...
 
                         ex:Animal
                           rdf:type          skos:Concept;
                           skos:prefLabel    "animal"@es;
                           skos:altLabel     "criatura"@es.
-                <!-- .element: class="fragment" data-fragment-index="4" -->
+                
 
                 </script>
                 </section>
@@ -1335,123 +1350,128 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 <script type="text/template">
                 ## SKOS: etiquetas
                 <!-- .slide: style="font-size:30px" -->
-                `skos:hiddenLabel`<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Permite asignar una etiqueta léxica oculta a un recurso.<!-- .element: class="fragment" data-fragment-index="2" -->
-                - Se utiliza para alimentar motores de búsqueda o indexado de forma no visible.<!-- .element: class="fragment" data-fragment-index="3" -->
-                - <!-- .element: class="fragment" data-fragment-index="4" -->Se suelen usar para incluir errores tipográficos frecuentes<!-- .element: class="fragment" data-fragment-index="4" -->
+                `skos:hiddenLabel`
+                - Permite asignar una etiqueta léxica oculta a un recurso.
+                - Se utiliza para alimentar motores de búsqueda o indexado de forma no visible.
+                - Se suelen usar para incluir errores tipográficos frecuentes
 
                         ex:Animal
                           rdf:type          skos:Concept;
                           skos:prefLabel    "animal"@es;
                           skos:altLabel     "ganado"@es;
                           skos:hiddenLabel  "granado"@es;
-                <!-- .element: class="fragment" data-fragment-index="5" -->
+                
 
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## SKOS: otra caracterización
-                `skos:definition`<!-- .element: class="fragment" data-fragment-index="1" -->
+                `skos:definition`
 
-                usada para proporcionar una explicación completa del significado de un concepto<!-- .element: class="fragment" data-fragment-index="1" -->
+                usada para proporcionar una explicación completa del significado de un concepto
 
-                `skos:example, skos:scopeNote, skos:historyNote`<!-- .element: class="fragment" data-fragment-index="2" -->
+                `skos:example, skos:scopeNote, skos:historyNote`
 
-                todas subpropiedades de <!-- .element: class="fragment" data-fragment-index="3" -->`skos:note`<!-- .element: class="fragment" data-fragment-index="3" -->
+                todas subpropiedades de `skos:note`
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## SKOS: relaciones semánticas
-                ><!-- .element: class="fragment" data-fragment-index="1" -->El significado de un concepto no sólo se define por las palabras en lenguaje natural almacenadas en sus etiquetas, sino por sus relaciones con otros conceptos en el vocabulario<!-- .element: class="fragment" data-fragment-index="1" -->
+                >El significado de un concepto no sólo se define por las palabras en lenguaje natural almacenadas en sus etiquetas, sino por sus relaciones con otros conceptos en el vocabulario
                 </script>
                 </section>
                 <section data-id="1" data-markdown style="font-size:30px;">
                 <script type="text/template">
-                ## SKOS: relaciones semánticas
-                `skos:broader, skos:narrower`<!-- .element: class="fragment" data-fragment-index="1" -->
+                ## SKOS: relaciones semánticas (II)
+                `skos:broader, skos:narrower`
 
-                usadas para representar estructura jerárquica en KOS<!-- .element: class="fragment" data-fragment-index="1" -->
+                usadas para representar estructura jerárquica en KOS
 
-                - <!-- .element: class="fragment" data-fragment-index="2" -->`skos:broader` <!-- .element: class="fragment" data-fragment-index="2" --><!-- .element: class="fragment" data-fragment-index="2" -->*se lee tiene un concepto más amplio*<!-- .element: class="fragment" data-fragment-index="2" -->
-                - Una es la inversa de la otra<!-- .element: class="fragment" data-fragment-index="3" -->
-                - <!-- .element: class="fragment" data-fragment-index="4" -->No son transitivas<!-- .element: class="fragment" data-fragment-index="4" -->
+                - `skos:broader` se lee *tiene un concepto más amplio*
+                - Rango y dominio: `skos:Concept`
+                - Una es la inversa de la otra
+                - **No** son transitivas (existen equivalentes transitivos)
 
                         ex:mamíferos rdf:type skos:Concept;
                           skos:prefLabel "mamíferos"@es;
                           skos:broader ex:animales.
-                <!-- .element: class="fragment" data-fragment-index="5" --> 
+                 
 
-                 the subject of a skos:broader statement is the more specific concept involved in the assertion and its object is the more generic one. <!-- .element: class="fragment" data-fragment-index="6" --> 
+                 the subject of a skos:broader statement is the more specific concept involved in the assertion and its object is the more generic one.  
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## SKOS: relaciones semánticas
-                `skos:related`<!-- .element: class="fragment" data-fragment-index="1" -->
+                `skos:related`
 
-                se utiliza para relaciones asociativas no jerárquicas entre dos conceptos.<!-- .element: class="fragment" data-fragment-index="1" -->
+                se utiliza para relaciones asociativas no jerárquicas entre dos conceptos.
 
-                - Es una relación simétrica<!-- .element: class="fragment" data-fragment-index="2" -->
-                - No es transitiva<!-- .element: class="fragment" data-fragment-index="3" -->
-                - <!-- .element: class="fragment" data-fragment-index="4" -->Es disjunta con <!-- .element: class="fragment" data-fragment-index="4" -->`skos:broader,skos:narrower`<!-- .element: class="fragment" data-fragment-index="4" -->
+                - Es una relación simétrica
+                - Rango y dominio: `skos:Concept`
+                - No es transitiva
+                - Es disjunta con `skos:broader,skos:narrower`
 
                         ex:pájaros rdf:type skos:Concept;
                           skos:prefLabel "pájaros"@es;
                           skos:related ex:ornitologia.
-                <!-- .element: class="fragment" data-fragment-index="5" -->
+                
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## SKOS: concept schemes
-                `skos:ConceptScheme`<!-- .element: class="fragment" data-fragment-index="1" -->
+                `skos:ConceptScheme`
 
-                clase que agrupa vocabularios compilados con SKOS<!-- .element: class="fragment" data-fragment-index="1" -->
+                clase que agrupa vocabularios compilados con SKOS
 
                         ex:tesauroAnimal rdf:type skos:ConceptScheme;
                           dct:title "Tesauro animal";
                           dct:creator ex:Pepe.
-                <!-- .element: class="fragment" data-fragment-index="2" -->
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## SKOS: concept schemes
-                `skos:hasTopConcept`<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Propiedad que permite enlazar un concept scheme con el resto de conceptos que contiene.<!-- .element: class="fragment" data-fragment-index="2" -->
-                - <!-- .element: class="fragment" data-fragment-index="3" -->Punto de acceso a la jerarquía de conocimiento.<!-- .element: class="fragment" data-fragment-index="3" -->
+                `skos:hasTopConcept`
+                - Propiedad que permite enlazar un concept scheme con el resto de conceptos que contiene.
+                - Dominio: `skos:ConceptScheme`
+                - Rango: `skos:Concept`
+                - Punto de acceso a la jerarquía de conocimiento.
 
                         ex:tesauroAnimal rdf:type skos:ConceptScheme;
                           skos:hasTopConcept ex:mamíferos;
                           skos:hasTopConcept ex:peces.
-                <!-- .element: class="fragment" data-fragment-index="4" -->
+                
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## SKOS: enlazado de conceptos
-                `skos:closeMatch`<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Implica que dos conceptos son lo suficientemente cercanos como para poder ser utilizados indistintamente.<!-- .element: class="fragment" data-fragment-index="2" -->
-                - <!-- .element: class="fragment" data-fragment-index="3" -->No es transitiva<!-- .element: class="fragment" data-fragment-index="3" -->
+                `skos:closeMatch`
+                - Implica que dos conceptos son lo suficientemente cercanos como para poder ser utilizados indistintamente.
+                - Rango y dominio: `skos:Concept`
+                - No es transitiva
 
                         dbpedia:Tennis rdf:type skos:ConceptScheme;
                           skos:prefLabel "tenis"@es;
                           skos:closeMatch ex2:Tenis.
-                <!-- .element: class="fragment" data-fragment-index="4" -->
+                
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## SKOS: enlazado de conceptos
-                `skos:exactMatch`<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Implica que dos conceptos tienen significados equivalentes<!-- .element: class="fragment" data-fragment-index="2" -->
-                - Sí es transitiva<!-- .element: class="fragment" data-fragment-index="3" -->
-                - <!-- .element: class="fragment" data-fragment-index="4" -->`closeMatch`<!-- .element: class="fragment" data-fragment-index="4" -->Es un enlace más fuerte que <!-- .element: class="fragment" data-fragment-index="4" -->`closeMatch`<!-- .element: class="fragment" data-fragment-index="4" -->
+                `skos:exactMatch`
+                - Implica que dos conceptos tienen significados equivalentes
+                - Rango y dominio: `skos:Concept`
+                - Sí es transitiva
+                - Es un enlace más fuerte que `closeMatch`
 
                         ex1:animal skos:exactMatch ex2:animals.
-                <!-- .element: class="fragment" data-fragment-index="5" -->
+                
                 </script>
                 </section>
                     
@@ -1459,29 +1479,29 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 <script type="text/template">
                 ## SKOS: reutilización
                 <!-- .slide: style="font-size:30px" -->
-                `skos:inScheme`<!-- .element: class="fragment" data-fragment-index="1" -->
-                - <!-- .element: class="fragment" data-fragment-index="2" -->Permite reutilizar conceptos de un esquema en otro.<!-- .element: class="fragment" data-fragment-index="2" -->
+                `skos:inScheme`
+                - Permite reutilizar conceptos de un esquema en otro.
 
                         ex1:referenceAnimalScheme rdf:type skos:ConceptScheme;
                           dct:title "Reference list of animals"@en.
                           ex1:cats rdf:type skos:Concept;
                           skos:prefLabel "cats"@en;
                           skos:inScheme ex1:referenceAnimalScheme.
-                <!-- .element: class="fragment" data-fragment-index="3" -->
+                
 
-                - <!-- .element: class="fragment" data-fragment-index="4" -->La referencia a ex1:cats podría incluirse en otro esquema:<!-- .element: class="fragment" data-fragment-index="4" -->
+                - La referencia a ex1:cats podría incluirse en otro esquema:
 
                         ex2:catScheme rdf:type skos:ConceptScheme;
                         dct:title "The Complete Cat Thesaurus"@en.
                         ex1:cats skos:inScheme ex2:catScheme.
-                <!-- .element: class="fragment" data-fragment-index="5" -->
+                
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## SKOS: colecciones
-                `skos:Collection`<!-- .element: class="fragment" data-fragment-index="1" -->
-                - <!-- .element: class="fragment" data-fragment-index="2" -->Permite agrupar conceptos en una colección<!-- .element: class="fragment" data-fragment-index="2" -->
+                `skos:Collection`
+                - Permite agrupar conceptos en una colección
 
                         ex:Francia rdf:type skos:Concept.
                         ex:España rdf:type skos:Concept.
@@ -1490,15 +1510,15 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                           skos:member ex:Francia;
                           skos:member ex:España;
                           skos:member ex:Italia.
-                <!-- .element: class="fragment" data-fragment-index="3" -->
+                
 
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## SKOS: colecciones
-                `skos:OrderedCollection`<!-- .element: class="fragment" data-fragment-index="1" -->
-                - <!-- .element: class="fragment" data-fragment-index="2" -->Capturan orden entre los elementos<!-- .element: class="fragment" data-fragment-index="2" -->
+                `skos:OrderedCollection`
+                - Capturan orden entre los elementos
 
                         ex:niños rdf:type skos:Concept.
                         ex:adolescentes rdf:type skos:Concept.
@@ -1513,7 +1533,7 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                            rdf:rest _:b3.
                         _:b3 rdf:first ex:adultos;
                            rdf:rest rdf:nil.
-                <!-- .element: class="fragment" data-fragment-index="3" -->
+                
 
 
                 </script>
@@ -1530,21 +1550,21 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 <script type="text/template">
                 ##  clases básicas
                 <!-- .slide: style="font-size:30px" -->
-                - <!-- .element: class="fragment" data-fragment-index="1" -->`owl:Thing`<!-- .element: class="fragment" data-fragment-index="1" -->: todas las clases heredan de esta y todas las instancias lo son de ella.<!-- .element: class="fragment" data-fragment-index="1" -->
-                - <!-- .element: class="fragment" data-fragment-index="2" -->`owl:Class`<!-- .element: class="fragment" data-fragment-index="2" -->: clase de todos los recursos que son clases.<!-- .element: class="fragment" data-fragment-index="2" -->
-                - <!-- .element: class="fragment" data-fragment-index="3" -->`owl:DatatypeProperty`<!-- .element: class="fragment" data-fragment-index="3" -->: clase de todas las propiedades cuyos rangos son literales.<!-- .element: class="fragment" data-fragment-index="3" -->
-                - <!-- .element: class="fragment" data-fragment-index="4" -->`owl:ObjectProperty`<!-- .element: class="fragment" data-fragment-index="4" -->: clase de todas las propiedades cuyos rangos son instancias de `owl:Class`.<!-- .element: class="fragment" data-fragment-index="4" -->
-                - <!-- .element: class="fragment" data-fragment-index="5" -->`rdf:XMLLiteral`<!-- .element: class="fragment" data-fragment-index="5" -->: clase de todos los valores literales XML definidos en la especificación XML Schema.<!-- .element: class="fragment" data-fragment-index="5" -->
+                - `owl:Thing`: todas las clases heredan de esta y todas las instancias lo son de ella.
+                - `owl:Class`: clase de todos los recursos que son clases.
+                - `owl:DatatypeProperty`: clase de todas las propiedades cuyos rangos son literales.
+                - `owl:ObjectProperty`: clase de todas las propiedades cuyos rangos son instancias de `owl:Class`.
+                - `rdf:XMLLiteral`: clase de todos los valores literales XML definidos en la especificación XML Schema.
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ##  propiedades básicas
                 <!-- .slide: style="font-size:30px" -->
-                - <!-- .element: class="fragment" data-fragment-index="1" -->`rdf:type`<!-- .element: class="fragment" data-fragment-index="1" -->: tipo de un recurso. Especifica que es una instancia de una clase.<!-- .element: class="fragment" data-fragment-index="1" -->
-                - <!-- .element: class="fragment" data-fragment-index="2" -->`rdfs:subClassOf`<!-- .element: class="fragment" data-fragment-index="2" -->: especifica que una clase es subclase de otra.<!-- .element: class="fragment" data-fragment-index="2" -->
-                - <!-- .element: class="fragment" data-fragment-index="3" -->`rdfs:domain`<!-- .element: class="fragment" data-fragment-index="3" -->: implica que, cuando una propiedad se utilice en una tripleta, el sujeto de dicha tripleta tendrá que ser instancia de la clase especificada por<!-- .element: class="fragment" data-fragment-index="3" --> `rdfs:domain`<!-- .element: class="fragment" data-fragment-index="3" -->
-                - <!-- .element: class="fragment" data-fragment-index="4" -->`rdfs:range`<!-- .element: class="fragment" data-fragment-index="4" -->: implica que, cuando la propiedad se utilice en una tripleta, el objeto de dicha tripleta tendrá que ser instancia de la clase especificada por<!-- .element: class="fragment" data-fragment-index="4" --> `rdfs:range`<!-- .element: class="fragment" data-fragment-index="4" -->
+                - `rdf:type`: tipo de un recurso. Especifica que es una instancia de una clase.
+                - `rdfs:subClassOf`: especifica que una clase es subclase de otra.
+                - `rdfs:domain`: implica que, cuando una propiedad se utilice en una tripleta, el sujeto de dicha tripleta tendrá que ser instancia de la clase especificada por `rdfs:domain`
+                - `rdfs:range`: implica que, cuando la propiedad se utilice en una tripleta, el objeto de dicha tripleta tendrá que ser instancia de la clase especificada por `rdfs:range`
                 </script>
                 </section>
 
@@ -1552,20 +1572,20 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 <script type="text/template">
                 ##  modelado de ontologías
 
-                construir la ontología<!-- .element: class="fragment" data-fragment-index="1" -->
+                construir la ontología
 
-                - Crear la ontología<!-- .element: class="fragment" data-fragment-index="2" -->
-                - Nombrar las clases y caracterizarlas<!-- .element: class="fragment" data-fragment-index="3" -->
-                - Nombrar las propiedades y caracterizarlas<!-- .element: class="fragment" data-fragment-index="4" -->
+                - Crear la ontología
+                - Nombrar las clases y caracterizarlas
+                - Nombrar las propiedades y caracterizarlas
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ##  modelado de ontologías
 
-                declarar hechos sobre un dominio<!-- .element: class="fragment" data-fragment-index="1" -->
+                declarar hechos sobre un dominio
 
-                - Proporcionar información sobre individuos<!-- .element: class="fragment" data-fragment-index="2" -->
+                - Proporcionar información sobre individuos
 
                 </script>
                 </section>
@@ -1573,9 +1593,9 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 <script type="text/template">
                 ##  modelado de ontologías
 
-                razonar sobre hechos y ontologías<!-- .element: class="fragment" data-fragment-index="1" -->
+                razonar sobre hechos y ontologías
 
-                - Determinar las consecuencias de lo construido y afirmado<!-- .element: class="fragment" data-fragment-index="2" -->
+                - Determinar las consecuencias de lo construido y afirmado
 
                 </script>
                 </section>
@@ -1584,10 +1604,10 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 <script type="text/template">
                 ##  modelado de ontologías
 
-                herramientas: <!-- .element: class="fragment" data-fragment-index="1" -->[Protégé](https://protege.stanford.edu/)<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Editor de ontologías de código abierto<!-- .element: class="fragment" data-fragment-index="2" -->
-                - Marco de trabajo para construir sistemas inteligentes<!-- .element: class="fragment" data-fragment-index="3" -->
-                - Modular y extensible a través de plugins<!-- .element: class="fragment" data-fragment-index="4" -->
+                herramientas: [Protégé](https://protege.stanford.edu/)
+                - Editor de ontologías de código abierto
+                - Marco de trabajo para construir sistemas inteligentes
+                - Modular y extensible a través de plugins
 
 
                 </script>
@@ -1596,11 +1616,11 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 <script type="text/template">
                 ##  ejemplo: inferencia con Protégé
 
-                - Celestino padre-de José Luis<!-- .element: class="fragment" data-fragment-index="1" -->
-                - José Luis padre-de Miguel<!-- .element: class="fragment" data-fragment-index="2" -->
-                - tiene-padre inversa de padre-de<!-- .element: class="fragment" data-fragment-index="3" -->
+                - Celestino padre-de José Luis
+                - José Luis padre-de Miguel
+                - tiene-padre inversa de padre-de
 
-                ¿qué infiere el razonador?<!-- .element: class="fragment" data-fragment-index="4" -->
+                ¿qué infiere el razonador?
 
                 </script>
                 </section>
@@ -1609,8 +1629,8 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                 <script type="text/template">
                 ##  ejemplo: modelado SKOS
 
-                - importar vocabulario <!-- .element: class="fragment" data-fragment-index="1" -->[SKOS](http://purl.org/iso25964/skos-thes)<!-- .element: class="fragment" data-fragment-index="1" -->
-                - Definir categoría, sección, subsección, dataset, serie<!-- .element: class="fragment" data-fragment-index="2" -->
+                - importar vocabulario [SKOS](http://purl.org/iso25964/skos-thes)
+                - Definir categoría, sección, subsección, dataset, serie
 
                 </script>
                 </section>
@@ -1618,11 +1638,11 @@ Instancias<!-- .element: class="fragment" data-fragment-index="1" -->
                         <script type="text/template">
                             ##  ejemplo: vocabularios, skos
 
-                            - Acceder a <!-- .element: class="fragment" data-fragment-index="1" -->[punto SPARQL](http://www.icane.es/semantic-web)<!-- .element: class="fragment" data-fragment-index="1" -->
-                            - Lanzar consulta:<!-- .element: class="fragment" data-fragment-index="2" -->
+                            - Acceder a [punto SPARQL](http://www.icane.es/semantic-web)
+                            - Lanzar consulta:
                                     construct {?s ?p ?o} where {?s a skos:Concept; ?p ?o}
-                            - Acceder a <!-- .element: class="fragment" data-fragment-index="3" -->[vocabulario](http://www.icane.es/opendata/vocab)<!-- .element: class="fragment" data-fragment-index="3" --> e importar en Protégé<!-- .element: class="fragment" data-fragment-index="3" -->
-                            - Parsear RDFa en visualizador<!-- .element: class="fragment" data-fragment-index="4" -->
+                            - Acceder a [vocabulario](http://www.icane.es/opendata/vocab) e importar en Protégé
+                            - Parsear RDFa en visualizador
 
                         </script>
                     </section>
