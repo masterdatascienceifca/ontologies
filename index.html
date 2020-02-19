@@ -282,7 +282,7 @@
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ## URI, IRI, URL (II)
-                Es común acortar los URIs asignando un espacio de nombres a su base ([*Cool URIs*](https://www.w3.org/TR/cooluris/)):
+                Es común acortar los URIs asignando un espacio de nombres a su base:
 
                 http://www.w3.org/1999/02/22-rdf-syntax-ns#type
 
@@ -409,18 +409,18 @@
 
                 JSON-LD:
 
-                        {
-                            "@context": "example-context.json",
-                            "@id": "http://example.org/bob#me",
-                            "@type": "Person",
-                            "birthdate": "1990-07-04",
-                            "knows": "http://example.org/alice#me",
-                            "interest": {
-                              "@id": "http://www.wikidata.org/entity/Q12418",
-                              "title": "Mona Lisa",
-                              "subject_of": "http://data.europeana.eu/item/04802/243FA8618938F4117025F17A8B813C5F9AA4D619",
-                              "creator": "http://dbpedia.org/resource/Leonardo_da_Vinci"
-                      }
+                    {
+                        "@context": "example-context.json",
+                        "@id": "http://example.org/bob#me",
+                        "@type": "Person",
+                        "birthdate": "1990-07-04",
+                        "knows": "http://example.org/alice#me",
+                        "interest": {
+                            "@id": "http://www.wikidata.org/entity/Q12418",
+                            "title": "Mona Lisa",
+                            "subject_of": "http://data.europeana.eu/item/04802/243FA8618938F4117025F17A8B813C5F9AA4D619",
+                            "creator": "http://dbpedia.org/resource/Leonardo_da_Vinci"
+                        } 
                     }
 
                 </script>
@@ -996,7 +996,7 @@ Instancias
 
                 - La primera **clase** y la segunda contienen los mismos miembros
 
-                        ex:HumanoHembraAdulto     owl:equivalentClass    ex:Mujer
+                        ex:Mujer owl:equivalentClass (union(ex:Persona, ex:Hembra))
                 
 
                 ¡No implica igualdad de clases! (no denotan los mismos conceptos)
@@ -1010,7 +1010,7 @@ Instancias
 
                 - El primer **recurso** se refiere exactamente al mismo que el segundo
 
-                        ex:Spiderman     owl:sameAs    ex:PeterParker
+                        ex:Kal-El     owl:sameAs    ex:Superman
                 
 
                 Enlaza a dos individuos 
@@ -1148,7 +1148,7 @@ Instancias
 
                 - Las dos propiedades son exactamente las mismas, aunque tengan distinta intencionalidad
 
-                        ex:fechaNacimiento    owl:equivalentProperty   ex:cumpleaños
+                        ex:fechaNacimiento owl:equivalentProperty ex:cumpleaños
                 
                 </script>
                 </section>
