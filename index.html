@@ -828,7 +828,7 @@ Instancias
                 ##  OWL: diferencias con RDFS
                 vocabulario
 
-                - OWL incluye RDFS y ofrece mucho más
+                - OWL 2 Full incluye RDFS y ofrece mucho más
 
                         ex:Madre           owl:unionOf        (ex:Progenitor, ex:Mujer)
                         IFCA:JohnSmith     owl:sameAs         PersonalDatabase:JohnQSmith
@@ -846,7 +846,7 @@ Instancias
                 - OWL permite especificar cómo usar un vocabulario y cómo no usarlo
                 - OWL permite restringir los modelos de datos para permitir consultas más rápidas
 
-                >En RDFS un recurso puede definirse como clase e instancia simultáneamente. OWL no lo permite.
+                >En RDFS un recurso puede definirse como clase e instancia simultáneamente. OWL 2 DL no lo permite.
 
                 </script>
                 </section>
@@ -873,7 +873,7 @@ Instancias
                 ##  perfiles de OWL
 
                 - Existen para permitir un trade-off entre expresividad en el modelado y requisitos computacionales en el razonamiento automático
-                - Si no se está usando OWL para razonamiento automático, se puede usar el perfil más expresivo (`OWL 2 / Full`)
+                - Si no se está usando OWL para razonamiento automático, se puede usar el perfil más expresivo (OWL 2 / Full)
 
                 </script>
                 </section>
@@ -996,7 +996,7 @@ Instancias
 
                 - La primera **clase** y la segunda contienen los mismos miembros
 
-                        ex:Mujer owl:equivalentClass (union(ex:Persona, ex:Hembra))
+                        ex:HijoDePedro owl:equivalentClass (:tienePadre :Pedro)
                 
 
                 ¡No implica igualdad de clases! (no denotan los mismos conceptos)
@@ -1132,11 +1132,11 @@ Instancias
                 <section data-id="1" data-markdown>
                 <script type="text/template">
                 ##  OWL: propiedades (X)
-                `InverseOf`
+                `inverseOf`
 
                 - Las dos propiedades son inversas la una de la otra
 
-                       ex:tieneHijo    owl:InverseOf    ex:tieneProgenitor
+                       ex:tieneHijo    owl:inverseOf    ex:tieneProgenitor
                 
                 </script>
                 </section>
@@ -1333,7 +1333,7 @@ Instancias
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## SKOS: etiquetas
+                ## SKOS: etiquetas (III)
                 `skos:altLabel`
                 - Permite asignar una etiqueta léxica alternativa a un recurso.
                 - Se utiliza para representar sinónimos, abreviaturas, acrónimos...
@@ -1348,8 +1348,8 @@ Instancias
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## SKOS: etiquetas
-                <!-- .slide: style="font-size:30px" -->
+                ## SKOS: etiquetas (IV)
+                
                 `skos:hiddenLabel`
                 - Permite asignar una etiqueta léxica oculta a un recurso.
                 - Se utiliza para alimentar motores de búsqueda o indexado de forma no visible.
@@ -1404,7 +1404,7 @@ Instancias
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## SKOS: relaciones semánticas
+                ## SKOS: relaciones semánticas (III)
                 `skos:related`
 
                 se utiliza para relaciones asociativas no jerárquicas entre dos conceptos.
@@ -1434,7 +1434,7 @@ Instancias
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## SKOS: concept schemes
+                ## SKOS: concept schemes (II)
                 `skos:hasTopConcept`
                 - Propiedad que permite enlazar un concept scheme con el resto de conceptos que contiene.
                 - Dominio: `skos:ConceptScheme`
@@ -1463,7 +1463,7 @@ Instancias
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## SKOS: enlazado de conceptos
+                ## SKOS: enlazado de conceptos (II)
                 `skos:exactMatch`
                 - Implica que dos conceptos tienen significados equivalentes
                 - Rango y dominio: `skos:Concept`
@@ -1516,7 +1516,7 @@ Instancias
                 </section>
                 <section data-id="1" data-markdown>
                 <script type="text/template">
-                ## SKOS: colecciones
+                ## SKOS: colecciones (II)
                 `skos:OrderedCollection`
                 - Capturan orden entre los elementos
 
@@ -1629,7 +1629,7 @@ Instancias
                 <script type="text/template">
                 ##  ejemplo: modelado SKOS
 
-                - importar vocabulario [SKOS](http://purl.org/iso25964/skos-thes)
+                - importar vocabulario [SKOS](http://www.w3.org/2004/02/skos/core)
                 - Definir categoría, sección, subsección, dataset, serie
 
                 </script>
@@ -1725,7 +1725,7 @@ Instancias
                     ##  property restrictions
                     >A restriction describes a class of individuals based on the relationships that members of the class participate in. In other words, a restriction is a kind of class, in the same way that a named class is a kind of class.
 
-                    i.e. The class of individuals that have at least one has `Topping` relationship to individuals that are members of `MozzarellaTopping`.
+                    i.e. The class of individuals that have `hasWheels` with a value of at least 2.
                 </script>
             </section>
             <section data-id="1" data-markdown>
@@ -1767,9 +1767,9 @@ Instancias
         <section data-id="1" data-markdown>
                 <script type="text/template">
                 ##  necessary and sufficient conditions
-                >In Protege, in order to convert necessary conditions to necessary and sufficient conditions, the conditions must bemoved from under the `SubclassOf` header in the class description view to be under the `EquivalentClass` header.
+                ><!--.element  style="font-size: 90%" -->In Protege, in order to convert necessary conditions to necessary and sufficient conditions, the conditions must be moved from under the `SubClass Of` header in the class description view to be under the `EquivalentClass` header.
 
-                Necessary conditions are simply called `SubClassesOf` in Protege. Necessary and sufficient conditions are called `Equivalent classes`.
+                Necessary conditions are simply called `SubClasses` in Protege. Necessary and sufficient conditions are called `Equivalent classes`.
                 </script>
         </section>
 
@@ -1805,7 +1805,7 @@ Instancias
                 ##  covering axioms
                 >In Protege, a covering axiom manifests itself as a class that is the union of the classes being covered, which forms a superclass of the class being covered.
                 
-                A subclassOf B union C
+                `A SubclassOf (B or C)`
 
                 </script>
         </section>
