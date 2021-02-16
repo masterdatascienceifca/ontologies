@@ -7,7 +7,7 @@ Presentación teórico-práctica sobre ontologías, web semántica y RDF.
 - Abrir un navegador Chrome
 - Introducir la URL de la presentación y añadirle el parámetro `print-pdf`. Ejemplo:
 
-     https://masterdatascience-uimp-uc/ontologies/index.html?print-pdf
+     https://masterdatascience-uimp-uc.github.io/ontologies/index.html?print-pdf
 
 - Seleccionar la opción `imprimir` de Chrome
 - Seleccionar el Destino `Guardar como PDF`
