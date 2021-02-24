@@ -688,13 +688,13 @@ Instancias
 
                 -  Permite especificar que un concepto es instancia de una clase
 
-                        ex:miHondaCivic rdf:type ex:Vehiculo
-                        ex:miHondaCivic rdf:type ex:ArticuloEnVenta
-                        ex:miHomdaCivic rdf:type ex:BienAsegurado
+                        ex:miHondaCivic rdf:type ex:Vehiculo .
+                        ex:miHondaCivic rdf:type ex:ArticuloEnVenta .
+                        ex:miHomdaCivic rdf:type ex:BienAsegurado .
                 
                 - En Turtle/SPARQL se puede abreviar con `a`:
                 
-                        ex:miHondaCivic a ex:Vehiculo
+                        ex:miHondaCivic a ex:Vehiculo .
 
                 </script>
                 </section>
@@ -709,7 +709,7 @@ Instancias
                     - `rdf:Property`: Clase de las propiedades
                 
                 
-                      ex:articuloEnVenta rdf:type rdfs:Class .
+                      ex:ArticuloEnVenta rdf:type rdfs:Class .
                       ex:precio rdf:type rdf:Property .
 
                 </script>
@@ -723,8 +723,8 @@ Instancias
 
                 - `rdfs:range`: Rango (valores que la propiedad puede aceptar)
 
-                        ex:precio rdfs:domain rdf:ArticuloEnVenta
-                        ex:precio rdfs:range xsd:integer
+                        ex:precio rdfs:domain rdf:ArticuloEnVenta .
+                        ex:precio rdfs:range xsd:integer .
                         
                 ### ¡Inferencia!
                 
@@ -741,7 +741,7 @@ Instancias
                 - Las instancias de una subclase lo son de su clase padre
                 - Las propiedades de una clase lo son de su clase hija (**herencia**)
 
-                        ex:Coche rdfs:subClassOf ex:Vehiculo
+                        ex:Coche rdfs:subClassOf ex:Vehiculo .
                 
 
 
@@ -785,8 +785,8 @@ Instancias
                                 - Pedro es alérgico a las nueces. 
                                 - Pedro come Curry Tailandés.
                                 - Todos los alérgicos a las nueces son compadecibles.
-                                - Todo lo que tenga la propiedad "platoTailandésBasadoEn" es Tailandés.
-                                - Todo lo que satisfaga la propiedad "platoTailandésBasadoEn" lleva nueces.
+                                - Todo lo que tenga la propiedad "platoTailandésBasadoEn" es comestible.
+                                - Todo lo que satisfaga la propiedad "platoTailandésBasadoEn" es un ingrediente de cocina.
                                 - La propiedad "platoTailandésBasadoEn" es un caso especial de la propiedad "tieneIngrediente".
                 </script>
                 </section>
@@ -1169,14 +1169,14 @@ Instancias
 
                 - La propiedad puede tener un determinado número de valores
 
-                        ex:Coche owl:equivalentClass [
+                        ex:Bípedo owl:equivalentClass [
                            rdf:type owl:Restriction;
-                           owl:onProperty  ex:tieneRueda;
-                           owl:cardinality "4"^^xsd:int
-                        ] .
+                           owl:onProperty  ex:tienePiernas;
+                           owl:cardinality "2"^^xsd:int
+                        ]
                 
 
-                *Todos aquellos individuos que tienen 4 ruedas*
+                *Todos aquellos individuos que tienen 2 piernas*
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
@@ -1190,7 +1190,7 @@ Instancias
                            rdf:type owl:Restriction;
                            owl:onProperty ex:tienePadre;
                            owl:hasValue ex:Pepe
-                        ].
+                        ]
                 
 
                 *Todos aquellos individuos que tienen de padre a Pepe*
@@ -1203,14 +1203,14 @@ Instancias
 
                 - Al menos un objeto de esa propiedad es miembro de la clase especificada
 
-                        ex:Padre owl:equivalentClass [
+                        ex:Progenitor owl:equivalentClass [
                            rdf:type owl:Restriction;
                            owl:onProperty ex:tieneHijo;
                            owl:someValuesFrom ex:Person
                         ].
                 
 
-                *Cualquier instancia de la clase Padre tiene al menos un hijo, que es instancia de la clase Persona*
+                *Cualquier instancia de la clase Progenitor tiene al menos un hijo, que es instancia de la clase Persona*
                 </script>
                 </section>
                 <section data-id="1" data-markdown>
